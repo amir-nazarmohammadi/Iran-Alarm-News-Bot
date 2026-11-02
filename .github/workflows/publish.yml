@@ -1,0 +1,57 @@
+name: Iran Alarm News Publisher
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: iran-alarm-news
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Run news publisher
+        env:
+          API_ID: ${{ secrets.API_ID }}
+          API_HASH: ${{ secrets.API_HASH }}
+          TG_SESSION: ${{ secrets.TG_SESSION }}
+
+          DESTINATION_CHANNEL: "@Iran_Alarm_News"
+
+          SOURCE_CHANNELS: "@newscenter,@Politicalnewschannell,@km_ap,@IranianMinds"
+
+        run: python main.py
+
+      - name: Save processing state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/state.json
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Update news processing state"
+            git push
+          fi
