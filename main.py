@@ -20,34 +20,26 @@ API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
 TG_SESSION = os.environ["TG_SESSION"]
 
-DESTINATION = os.getenv(
-    "DESTINATION_CHANNEL",
-    "@Iran_Alarm_News"
-)
-
-SOURCES = [
-    channel.strip()
-    for channel in os.getenv(
-        "SOURCE_CHANNELS",
-        "@newscenter,@Politicalnewschannell,@km_ap,@IranianMinds"
-    ).split(",")
-    if channel.strip()
-]
-
+DESTINATION = "@Iran_Alarm_News"
 FOOTER = "@Iran_Alarm_News"
 
-STATE_FILE = Path("data/state.json")
+# فقط همین چهار کانال؛ هیچ منبع دیگری اضافه نمی‌شود.
+SOURCES = [
+    "@newscenter",
+    "@Politicalnewschannell",
+    "@km_ap",
+    "@IranianMinds",
+]
 
-# حداکثر تعداد پیام برای خواندن در هر منبع در هر اجرا
-# اگر پیام‌های جدید بیشتر باشند، در اجراهای بعدی ادامه می‌دهد.
-MAX_MESSAGES = 1000
+# فقط ۱۰ پیام آخر هر کانال بررسی می‌شود.
+MAX_MESSAGES = 10
 
-# حداکثر تعداد اثرانگشت ذخیره‌شده
 MAX_FINGERPRINTS = 20000
+STATE_FILE = Path("data/state.json")
 
 
 # =====================================================
-# گزارش اجرای برنامه
+# گزارش اجرا
 # =====================================================
 
 logging.basicConfig(
@@ -63,108 +55,55 @@ log = logging.getLogger("IranAlarmNews")
 # =====================================================
 
 GENERAL_AD_KEYWORDS = [
-    "تبلیغات",
-    "تبلیغ ویژه",
-    "تبلیغ رایگان",
-    "اسپانسر",
-    "کد تخفیف",
-    "تخفیف ویژه",
-    "فروش ویژه",
-    "خرید کنید",
-    "ثبت سفارش",
-    "سفارش دهید",
-    "برای خرید",
-    "درآمد دلاری",
-    "کسب درآمد",
-    "همکاری در فروش",
-    "زیرمجموعه گیری",
-    "زیرمجموعه‌گیری",
-    "فرصت محدود",
-    "sponsored",
-    "advertisement",
-    "affiliate",
-    "promo code",
-    "referral"
+    "تبلیغات", "تبلیغ ویژه", "تبلیغ رایگان",
+    "اسپانسر", "کد تخفیف", "تخفیف ویژه",
+    "فروش ویژه", "خرید کنید", "ثبت سفارش",
+    "سفارش دهید", "برای خرید", "درآمد دلاری",
+    "کسب درآمد", "همکاری در فروش",
+    "زیرمجموعه گیری", "زیرمجموعه‌گیری",
+    "فرصت محدود", "sponsored", "advertisement",
+    "affiliate", "promo code", "referral"
 ]
-
 
 GAMBLING_KEYWORDS = [
-    "شرط بندی",
-    "شرط‌بندی",
-    "سایت پیش بینی",
-    "سایت پیش‌بینی",
-    "کازینو",
-    "قمار",
-    "برد تضمینی",
-    "casino",
-    "betting"
+    "شرط بندی", "شرط‌بندی", "سایت پیش بینی",
+    "سایت پیش‌بینی", "کازینو", "قمار",
+    "برد تضمینی", "casino", "betting"
 ]
-
 
 VPN_TERMS = [
-    "vpn",
-    "وی پی ان",
-    "فیلترشکن",
-    "فیلتر شکن",
-    "فیلتر‌شکن",
-    "پروکسی",
-    "proxy",
-    "v2ray",
-    "vless",
-    "vmess",
-    "reality",
-    "کانفیگ",
-    "کانفیگ",
-    "openvpn",
-    "wireguard",
-    "amnezia",
-    "outline"
+    "vpn", "وی پی ان", "فیلترشکن", "فیلتر شکن",
+    "فیلتر‌شکن", "پروکسی", "proxy", "v2ray",
+    "vless", "vmess", "reality", "کانفیگ",
+    "openvpn", "wireguard", "amnezia", "outline"
 ]
-
 
 VPN_PROMOTION_TERMS = [
-    "خرید",
-    "فروش",
-    "اشتراک",
-    "دانلود",
-    "دریافت",
-    "سرور فعال",
-    "سرور اختصاصی",
-    "سرور پرسرعت",
-    "سرور رایگان",
-    "تست رایگان",
-    "کانفیگ رایگان",
-    "کانفیگ جدید",
-    "کانفیگ اختصاصی",
-    "اکانت ویژه",
-    "تمدید اشتراک",
-    "تمدید سرویس",
-    "لینک کانفیگ",
-    "پشتیبانی",
-    "سفارش",
-    "اتصال",
-    "رایگان دریافت",
-    "پرسرعت و پایدار",
-    "بدون قطعی",
-    "بدون محدودیت",
-    "خرید اکانت",
-    "فروش اکانت",
-    "عضویت در کانال",
-    "برای دریافت"
+    "خرید", "فروش", "اشتراک", "دانلود", "دریافت",
+    "سرور فعال", "سرور اختصاصی", "سرور پرسرعت",
+    "سرور رایگان", "تست رایگان", "کانفیگ رایگان",
+    "کانفیگ جدید", "کانفیگ اختصاصی", "اکانت ویژه",
+    "تمدید اشتراک", "تمدید سرویس", "لینک کانفیگ",
+    "پشتیبانی", "سفارش", "اتصال", "رایگان دریافت",
+    "پرسرعت و پایدار", "بدون قطعی",
+    "بدون محدودیت", "خرید اکانت", "فروش اکانت",
+    "عضویت در کانال", "برای دریافت"
 ]
-
 
 INVITE_PATTERNS = [
     r"t\.me/\+[a-zA-Z0-9_-]+",
     r"t\.me/joinchat/[a-zA-Z0-9_-]+"
 ]
 
-
 URL_PATTERN = re.compile(
     r"https?://\S+|www\.\S+|t\.me/\S+",
     re.IGNORECASE
 )
 
+# حذف آیدی کانال‌ها و نام‌های کاربری مبدأ از متن
+USERNAME_PATTERN = re.compile(
+    r"(?<![\w])@[A-Za-z0-9_]{4,}"
+)
 
 PROMOTIONAL_PATTERNS = [
     r"برای اطلاعات بیشتر",
@@ -181,58 +120,39 @@ PROMOTIONAL_PATTERNS = [
 
 def normalize(text):
     text = (text or "").lower()
-
     text = text.replace("ي", "ی")
     text = text.replace("ك", "ک")
-
     text = re.sub(r"\s+", " ", text)
-
     return text.strip()
 
 
 def contains_any(text, words):
-    return any(
-        normalize(word) in text
-        for word in words
-    )
+    return any(normalize(word) in text for word in words)
 
 
 def is_advertisement(text):
-    """
-    تشخیص تبلیغات عمومی، قمار و تبلیغات VPN.
-
-    اشاره خبری به VPN به تنهایی باعث حذف خبر نمی‌شود.
-    """
-
     text = normalize(text)
 
     if not text:
         return False, ""
 
-    # تبلیغات عمومی
     if contains_any(text, GENERAL_AD_KEYWORDS):
         return True, "تبلیغات عمومی"
 
-    # قمار و شرط‌بندی
     if contains_any(text, GAMBLING_KEYWORDS):
         return True, "قمار و شرط‌بندی"
 
-    # لینک دعوت
     for pattern in INVITE_PATTERNS:
         if re.search(pattern, text):
             return True, "لینک دعوت"
 
-    # دعوت به خرید و ثبت‌نام
     for pattern in PROMOTIONAL_PATTERNS:
         if re.search(pattern, text):
             return True, "دعوت تبلیغاتی"
 
-    # تبلیغات VPN و پروکسی
     has_vpn = contains_any(text, VPN_TERMS)
-
     has_vpn_promotion = contains_any(
-        text,
-        VPN_PROMOTION_TERMS
+        text, VPN_PROMOTION_TERMS
     )
 
     if has_vpn and has_vpn_promotion:
@@ -242,15 +162,11 @@ def is_advertisement(text):
 
 
 # =====================================================
-# مدیریت وضعیت و جلوگیری از انتشار تکراری
+# مدیریت وضعیت
 # =====================================================
 
 def load_state():
-
-    STATE_FILE.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
 
     if not STATE_FILE.exists():
         return {
@@ -260,9 +176,7 @@ def load_state():
 
     try:
         state = json.loads(
-            STATE_FILE.read_text(
-                encoding="utf-8"
-            )
+            STATE_FILE.read_text(encoding="utf-8")
         )
 
         state.setdefault("last_ids", {})
@@ -280,60 +194,42 @@ def load_state():
 
 
 def save_state(state):
-
-    STATE_FILE.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
 
     temp_file = STATE_FILE.with_suffix(".tmp")
 
     temp_file.write_text(
-        json.dumps(
-            state,
-            ensure_ascii=False,
-            indent=2
-        ),
+        json.dumps(state, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
 
     temp_file.replace(STATE_FILE)
 
 
+# =====================================================
+# تشخیص پیام تکراری
+# =====================================================
+
 def make_fingerprint(message):
-
-    text = normalize(
-        message.message or ""
-    )
-
-    # حذف لینک‌ها از متن برای تشخیص خبرهای یکسان
+    text = normalize(message.message or "")
     text = URL_PATTERN.sub("", text)
 
-    # تشخیص نوع رسانه
     media_type = (
         type(message.media).__name__
-        if message.media
-        else "text"
+        if message.media else "text"
     )
 
-    # اگر متن وجود داشته باشد، متن مبنای تشخیص است.
     if text:
         content = text
-
     else:
-        # رسانه بدون کپشن:
-        # شناسه رسانه در صورت وجود استفاده می‌شود.
         media_id = ""
 
         if message.photo:
             media_id = str(message.photo.id)
-
         elif message.document:
             media_id = str(message.document.id)
 
-        content = (
-            f"{media_type}|{media_id}|{message.id}"
-        )
+        content = f"{media_type}|{media_id}|{message.id}"
 
     return hashlib.sha256(
         content.encode("utf-8")
@@ -341,21 +237,14 @@ def make_fingerprint(message):
 
 
 def is_duplicate(message, state):
-
-    fingerprint = make_fingerprint(message)
-
-    return (
-        fingerprint in state["fingerprints"]
-    )
+    return make_fingerprint(message) in state["fingerprints"]
 
 
 def remember_message(message, state):
-
     fingerprint = make_fingerprint(message)
 
-    state["fingerprints"].append(
-        fingerprint
-    )
+    if fingerprint not in state["fingerprints"]:
+        state["fingerprints"].append(fingerprint)
 
     state["fingerprints"] = (
         state["fingerprints"][-MAX_FINGERPRINTS:]
@@ -363,23 +252,18 @@ def remember_message(message, state):
 
 
 # =====================================================
-# آماده‌سازی متن خبر
+# آماده‌سازی متن
 # =====================================================
 
 def prepare_text(text):
-
     text = text or ""
 
-    # حذف لینک‌های موجود در متن
+    # حذف لینک‌ها و آیدی‌های کانال‌های مبدأ
     text = URL_PATTERN.sub("", text)
+    text = USERNAME_PATTERN.sub("", text)
 
     # حذف خطوط خالی اضافی
-    text = re.sub(
-        r"\n{3,}",
-        "\n\n",
-        text
-    )
-
+    text = re.sub(r"\n{3,}", "\n\n", text)
     text = text.strip()
 
     if text:
@@ -392,49 +276,30 @@ def prepare_text(text):
 
 # =====================================================
 # انتشار پیام تکی
+# خروجی True یعنی پیام پردازش شده است.
+# خروجی False یعنی انتشار ناموفق بوده است.
 # =====================================================
 
-async def publish_single(
-    client,
-    destination,
-    message,
-    state
-):
+async def publish_single(client, destination, message, state):
 
     original_text = message.message or ""
 
-    # فیلتر تبلیغات
-    rejected, reason = is_advertisement(
-        original_text
-    )
+    rejected, reason = is_advertisement(original_text)
 
     if rejected:
-
         log.info(
-            "پیام %s رد شد: %s",
-            message.id,
-            reason
+            "پیام %s به دلیل %s رد شد",
+            message.id, reason
         )
+        return True
 
-        return
-
-    # جلوگیری از تکرار
     if is_duplicate(message, state):
+        log.info("پیام تکراری رد شد: %s", message.id)
+        return True
 
-        log.info(
-            "پیام تکراری رد شد: %s",
-            message.id
-        )
-
-        return
-
-    final_text = prepare_text(
-        original_text
-    )
+    final_text = prepare_text(original_text)
 
     try:
-
-        # عکس، ویدئو و فایل
         if message.media:
 
             with tempfile.TemporaryDirectory() as temp_dir:
@@ -445,13 +310,11 @@ async def publish_single(
                 )
 
                 if not media_path:
-
                     log.warning(
                         "دانلود رسانه پیام %s ناموفق بود",
                         message.id
                     )
-
-                    return
+                    return False
 
                 await client.send_file(
                     destination,
@@ -459,9 +322,7 @@ async def publish_single(
                     caption=final_text
                 )
 
-        # پیام متنی
         elif final_text:
-
             await client.send_message(
                 destination,
                 final_text,
@@ -469,74 +330,44 @@ async def publish_single(
             )
 
         else:
-            return
+            return True
 
-        remember_message(
-            message,
-            state
-        )
+        remember_message(message, state)
 
-        log.info(
-            "پیام %s منتشر شد",
-            message.id
-        )
+        log.info("پیام %s منتشر شد", message.id)
+        return True
 
     except FloodWaitError:
         raise
 
     except Exception:
-
-        log.exception(
-            "خطا در انتشار پیام %s",
-            message.id
-        )
-
-        return
+        log.exception("خطا در انتشار پیام %s", message.id)
+        return False
 
 
 # =====================================================
 # انتشار آلبوم
 # =====================================================
 
-async def publish_album(
-    client,
-    destination,
-    album,
-    state
-):
+async def publish_album(client, destination, album, state):
 
-    # اگر حتی یک کپشن تبلیغاتی باشد،
+    # اگر یکی از اجزای آلبوم تبلیغاتی باشد،
     # کل آلبوم رد می‌شود.
 
     for message in album:
-
         rejected, reason = is_advertisement(
             message.message or ""
         )
 
         if rejected:
+            log.info("کل آلبوم رد شد: %s", reason)
+            return True
 
-            log.info(
-                "کل آلبوم رد شد: %s",
-                reason
-            )
-
-            return
-
-    # جلوگیری از انتشار آلبوم تکراری
-    if any(
-        is_duplicate(message, state)
-        for message in album
-    ):
-
-        log.info(
-            "آلبوم تکراری رد شد"
-        )
-
-        return
+    if any(is_duplicate(message, state) for message in album):
+        log.info("آلبوم تکراری رد شد")
+        return True
 
     try:
-
         with tempfile.TemporaryDirectory() as temp_dir:
 
             media_paths = []
@@ -550,34 +381,28 @@ async def publish_album(
                 )
 
                 if not media_path:
-                    continue
+                    log.warning("دانلود بخشی از آلبوم ناموفق بود")
+                    return False
 
-                media_paths.append(
-                    media_path
-                )
+                media_paths.append(media_path)
 
-                original_caption = (
-                    message.message or ""
-                )
+                original_caption = message.message or ""
 
                 if index == 0:
                     captions.append(
                         prepare_text(original_caption)
                     )
-
                 elif original_caption:
-                    captions.append(
-                        URL_PATTERN.sub(
-                            "",
-                            original_caption
-                        ).strip()
+                    caption = URL_PATTERN.sub(
+                        "", original_caption
                     )
-
+                    caption = USERNAME_PATTERN.sub("", caption)
+                    captions.append(caption.strip())
                 else:
                     captions.append(None)
 
             if not media_paths:
-                return
+                return True
 
             await client.send_file(
                 destination,
@@ -586,134 +411,120 @@ async def publish_album(
             )
 
         for message in album:
-            remember_message(
-                message,
-                state
-            )
+            remember_message(message, state)
 
-        log.info(
-            "آلبوم با %s فایل منتشر شد",
-            len(media_paths)
-        )
+        log.info("آلبوم با %s فایل منتشر شد", len(media_paths))
+        return True
 
     except FloodWaitError:
         raise
 
     except Exception:
-
-        log.exception(
-            "خطا در انتشار آلبوم"
-        )
+        log.exception("خطا در انتشار آلبوم")
+        return False
 
 
 # =====================================================
-# بررسی هر کانال خبری
+# بررسی هر کانال
 # =====================================================
 
-async def process_source(
-    client,
-    source,
-    destination,
-    state
-):
+async def process_source(client, source, destination, state):
 
     source_key = source.lower()
 
-    last_id = int(
-        state["last_ids"].get(
-            source_key,
-            0
-        )
-    )
+    log.info("در حال بررسی کانال: %s", source)
 
-    log.info(
-        "در حال بررسی: %s",
-        source
-    )
+    entity = await client.get_entity(source)
 
-    entity = await client.get_entity(
-        source
-    )
-
-    messages = []
+    # فقط ۱۰ پیام آخر کانال دریافت می‌شود.
+    latest_messages = []
 
     async for message in client.iter_messages(
         entity,
-        min_id=last_id,
-        reverse=True,
         limit=MAX_MESSAGES
     ):
-
         if message and not message.action:
-            messages.append(message)
+            latest_messages.append(message)
 
-    if not messages:
+    if not latest_messages:
+        log.info("کانال خالی است: %s", source)
+        return
+
+    # مرتب‌سازی از قدیمی به جدید
+    latest_messages.sort(key=lambda item: item.id)
+
+    # اولین اجرای این کانال:
+    # آخرین شناسه ثبت می‌شود و هیچ پیام قدیمی منتشر نمی‌شود.
+    if source_key not in state["last_ids"]:
+        latest_id = max(item.id for item in latest_messages)
+
+        state["last_ids"][source_key] = latest_id
+        save_state(state)
 
         log.info(
-            "خبر جدیدی در %s وجود ندارد",
-            source
+            "نقطه شروع کانال %s ثبت شد؛ پیام قدیمی منتشر نمی‌شود. آخرین شناسه: %s",
+            source, latest_id
         )
+        return
 
+    last_id = int(state["last_ids"].get(source_key, 0))
+
+    # فقط پیام‌های جدیدتر از آخرین پیام پردازش‌شده
+    new_messages = [
+        message
+        for message in latest_messages
+        if message.id > last_id
+    ]
+
+    if not new_messages:
+        log.info("خبر جدیدی در %s نیست", source)
         return
 
     log.info(
-        "%s پیام جدید از %s دریافت شد",
-        len(messages),
-        source
+        "%s پیام جدید در %s پیدا شد",
+        len(new_messages), source
     )
 
-    index = 0
+    # گروه‌بندی آلبوم‌ها و پیام‌های تکی
+    units = []
+    grouped = {}
 
-    while index < len(messages):
+    for message in new_messages:
 
-        message = messages[index]
-
-        # تشخیص آلبوم
         if message.grouped_id:
-
-            group_id = message.grouped_id
-
-            album = []
-
-            while (
-                index < len(messages)
-                and messages[index].grouped_id == group_id
-            ):
-
-                album.append(
-                    messages[index]
-                )
-
-                index += 1
-
-            await publish_album(
-                client,
-                destination,
-                album,
-                state
-            )
-
-            # ذخیره وضعیت بعد از پردازش آلبوم
-            state["last_ids"][source_key] = max(
-                item.id for item in album
-            )
-
-            save_state(state)
-
+            grouped.setdefault(message.grouped_id, []).append(message)
         else:
+            units.append(([message], message.id))
 
-            await publish_single(
-                client,
-                destination,
-                message,
-                state
+    for album in grouped.values():
+        album.sort(key=lambda item: item.id)
+        units.append((album, max(item.id for item in album)))
+
+    # مرتب‌سازی واحدها بر اساس شناسه پیام
+    units.sort(key=lambda unit: min(item.id for item in unit[0]))
+
+    for items, unit_last_id in units:
+
+        if len(items) > 1 or items[0].grouped_id:
+            success = await publish_album(
+                client, destination, items, state
+            )
+        else:
+            success = await publish_single(
+                client, destination, items[0], state
             )
 
-            state["last_ids"][source_key] = message.id
+        # اگر انتشار ناموفق بود، شناسه جلو نمی‌رود
+        # تا در اجرای بعدی دوباره بررسی شود.
+        if not success:
+            log.warning(
+                "پردازش کانال %s متوقف شد؛ پیام ناموفق در اجرای بعد دوباره بررسی می‌شود",
+                source
+            )
+            break
 
-            save_state(state)
-
-            index += 1
+        state["last_ids"][source_key] = unit_last_id
+        save_state(state)
 
 
 # =====================================================
@@ -730,26 +541,18 @@ async def main():
         API_HASH
     )
 
-    log.info(
-        "اتصال به تلگرام..."
-    )
+    log.info("اتصال به تلگرام...")
 
     await client.start()
 
     try:
+        destination = await client.get_entity(DESTINATION)
 
-        destination = await client.get_entity(
-            DESTINATION
-        )
-
-        log.info(
-            "اتصال موفق؛ شروع بررسی منابع خبری"
-        )
+        log.info("اتصال موفق؛ شروع بررسی کانال‌ها")
 
         for source in SOURCES:
 
             try:
-
                 await process_source(
                     client,
                     source,
@@ -758,41 +561,26 @@ async def main():
                 )
 
             except FloodWaitError as error:
-
                 log.warning(
                     "تلگرام درخواست انتظار %s ثانیه‌ای داد",
                     error.seconds
                 )
-
-                await asyncio.sleep(
-                    error.seconds
-                )
+                await asyncio.sleep(error.seconds)
 
             except (RPCError, ValueError):
-
-                log.exception(
-                    "خطا در منبع: %s",
-                    source
-                )
+                log.exception("خطا در منبع: %s", source)
 
             except Exception:
-
                 log.exception(
                     "خطای پیش‌بینی‌نشده در منبع: %s",
                     source
                 )
 
     finally:
-
         save_state(state)
-
         await client.disconnect()
-
-        log.info(
-            "پایان اجرای برنامه"
-        )
+        log.info("پایان اجرای برنامه")
 
 
 if __name__ == "__main__":
-
     asyncio.run(main())
