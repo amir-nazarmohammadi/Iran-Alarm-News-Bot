@@ -9,22 +9,19 @@ on:
       - main
 
   schedule:
-    # کرون فقط نقش زنده‌کننده را دارد.
-    - cron: '11,41 * * * *'
+    # اجرای مجدد خودکار در دقیقه ۱۱ و ۴۱ هر ساعت
+    - cron: "11,41 * * * *"
+
+concurrency:
+  group: iran-alarm-news-publisher
+  cancel-in-progress: false
 
 permissions:
   contents: write
 
-# جلوگیری از اجرای هم‌زمان چند نسخه ربات
-concurrency:
-  group: iran-alarm-news-bot
-  cancel-in-progress: false
-
 jobs:
-  run-news-bot:
+  publish:
     runs-on: ubuntu-latest
-
-    # حداکثر زمان اجرای هر Job
     timeout-minutes: 355
 
     steps:
@@ -32,93 +29,128 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Install dependencies
-        run: python -m pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      - name: Run news bot in self-sustaining loop
+      - name: Run news publisher
         env:
           API_ID: ${{ secrets.API_ID }}
           API_HASH: ${{ secrets.API_HASH }}
           TG_SESSION: ${{ secrets.TG_SESSION }}
-          DESTINATION_CHANNEL: '@Iran_Alarm_News'
-          PYTHONUNBUFFERED: '1'
+
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          CONFIG_BRANCH: main
+          CONFIG_PATH: config.json
+
+          PYTHONUNBUFFERED: "1"
 
         run: |
-          INTERVAL=300
-          RUN_FOR=$((340*60))
-          START=$SECONDS
-          CYCLE=0
+          set -u
 
-          # آخرین نسخه کد که این اجرا بر اساس آن شروع شده
+          INTERVAL=300
+          RUN_FOR=$((340 * 60))
+          START_TIME=$(date +%s)
+
           BASE_SHA=$(git rev-parse HEAD)
 
-          git config user.name "Iran Alarm News Bot"
-          git config user.email "bot@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          while [ $((SECONDS - START)) -lt $RUN_FOR ]; do
+          echo "Iran Alarm News publisher started."
+          echo "Checking every 5 minutes."
 
-            CYCLE=$((CYCLE+1))
-            CYCLE_START=$SECONDS
+          while true; do
 
-            echo "=========================================="
-            echo "Cycle: $CYCLE"
-            echo "Time: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-            echo "=========================================="
+            NOW=$(date +%s)
+            ELAPSED=$((NOW - START_TIME))
 
-            # بررسی اینکه کد جدیدی روی main قرار نگرفته باشد
-            REMOTE_SHA=$(git ls-remote origin refs/heads/main | cut -f1)
-
-            if [ -n "$REMOTE_SHA" ] && [ "$REMOTE_SHA" != "$BASE_SHA" ]; then
-              echo "نسخه جدیدی از کد منتشر شده؛ اجرای فعلی متوقف می‌شود."
+            if [ "$ELAPSED" -ge "$RUN_FOR" ]; then
+              echo "Execution time reached. Exiting."
               break
             fi
 
-            # اجرای ربات؛ حداکثر ۴ دقیقه برای هر چرخه
-            if timeout 240 python main.py; then
-              echo "ربات با موفقیت اجرا شد."
-            else
-              STATUS=$?
-              echo "::warning::اجرای ربات با کد $STATUS تمام شد."
+            git fetch origin main
+
+            REMOTE_SHA=$(git rev-parse origin/main)
+
+            if [ "$REMOTE_SHA" != "$BASE_SHA" ]; then
+              echo "Repository changed externally."
+              echo "Restarting through the next scheduled workflow."
+              break
             fi
 
-            # ذخیره وضعیت پردازش پیام‌ها در GitHub
+            CYCLE_START=$(date +%s)
+
+            echo "----------------------------------------"
+            echo "Starting news check..."
+            date -u
+            echo "----------------------------------------"
+
+            timeout 240 python main.py || {
+              echo "Publisher returned an error or timed out."
+            }
+
+            # ذخیره وضعیت پیام‌های پردازش‌شده
             git add data/state.json
 
             if ! git diff --cached --quiet; then
-              git commit -m "Update news bot state"
+
+              git commit -m "Update Iran Alarm publisher state"
+
+              # بررسی تغییرات هم‌زمان در مخزن
+              git fetch origin main
+              REMOTE_SHA=$(git rev-parse origin/main)
+
+              if [ "$REMOTE_SHA" != "$BASE_SHA" ]; then
+                echo "Remote repository changed during this cycle."
+                echo "Stopping to avoid overwriting external changes."
+                break
+              fi
 
               if git push origin HEAD:main; then
-                # تغییر خودمان نباید به‌عنوان نسخه جدید تشخیص داده شود.
                 BASE_SHA=$(git rev-parse HEAD)
-                echo "وضعیت پیام‌های پردازش‌شده ذخیره شد."
+                echo "Publisher state saved."
               else
-                echo "::error::ذخیره وضعیت در GitHub ناموفق بود."
-                exit 1
+                echo "Could not push state. Will retry in next run."
+                break
               fi
-            else
-              echo "تغییری در فایل وضعیت وجود ندارد."
+
             fi
 
-            # محاسبه زمان باقی‌مانده تا چرخه بعدی
-            ELAPSED=$((SECONDS - CYCLE_START))
-            SLEEP=$((INTERVAL - ELAPSED))
+            CYCLE_END=$(date +%s)
+            CYCLE_DURATION=$((CYCLE_END - CYCLE_START))
 
-            if [ "$SLEEP" -lt 10 ]; then
-              SLEEP=10
+            SLEEP_TIME=$((INTERVAL - CYCLE_DURATION))
+
+            if [ "$SLEEP_TIME" -lt 10 ]; then
+              SLEEP_TIME=10
             fi
 
-            echo "چرخه $CYCLE تمام شد."
-            echo "مدت اجرا: ${ELAPSED} ثانیه"
-            echo "${SLEEP} ثانیه تا بررسی بعدی صبر می‌کنیم."
+            NOW=$(date +%s)
+            ELAPSED=$((NOW - START_TIME))
+            REMAINING=$((RUN_FOR - ELAPSED))
 
-            sleep "$SLEEP"
+            if [ "$SLEEP_TIME" -gt "$REMAINING" ]; then
+              SLEEP_TIME=$REMAINING
+            fi
+
+            if [ "$SLEEP_TIME" -le 0 ]; then
+              break
+            fi
+
+            echo "Next check in $SLEEP_TIME seconds."
+            sleep "$SLEEP_TIME"
 
           done
 
-          echo "اجرای طولانی تمام شد؛ کرون بعدی ربات را دوباره زنده می‌کند."
+          echo "Iran Alarm News publisher stopped."
