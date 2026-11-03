@@ -1,0 +1,24 @@
+{
+  "destination": "@Iran_Alarm_News",
+  "paused": false,
+  "sources": [
+    "@newscenter",
+    "@Politicalnewschannell",
+    "@km_ap",
+    "@IranianMinds"
+  ],
+  "enabled_sources": [
+    "@newscenter",
+    "@Politicalnewschannell",
+    "@km_ap",
+    "@IranianMinds"
+  ],
+  "admins": [],
+  "filters": {
+    "ads": true,
+    "gambling": true,
+    "vpn_promotions": true
+  },
+  "updated_at": null,
+  "updated_by": null
+}
