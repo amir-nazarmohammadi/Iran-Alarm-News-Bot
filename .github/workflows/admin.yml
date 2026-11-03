@@ -1,0 +1,41 @@
+name: Iran Alarm Admin Bot
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "17 */6 * * *"
+
+concurrency:
+  group: iran-alarm-admin-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  admin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements-admin.txt
+
+      - name: Run admin bot
+        env:
+          ADMIN_BOT_TOKEN: ${{ secrets.ADMIN_BOT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          CONFIG_BRANCH: main
+          CONFIG_PATH: config.json
+          PYTHONUNBUFFERED: "1"
+        run: python admin_bot.py
