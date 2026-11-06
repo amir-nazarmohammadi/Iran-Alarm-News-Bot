@@ -1,46 +1,68 @@
-
 import os
 import re
+import copy
 import json
 import asyncio
 import hashlib
 import logging
 import tempfile
 import base64
+import urllib.parse
 import urllib.request
 import urllib.error
 
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.errors import FloodWaitError, RPCError
+from telethon.tl.types import InputPeerChannel
+from telethon.utils import get_input_peer
 
 
 # =====================================================
-# تنظیمات اصلی و امنیت منابع
+# تنظیمات اصلی
 # =====================================================
 
 API_ID = int(os.environ["API_ID"])
 API_HASH = os.environ["API_HASH"]
 TG_SESSION = os.environ["TG_SESSION"]
 
+# توکن ربات مدیریت؛ فقط برای ارسال هشدار خطا به Owner استفاده می‌شود.
+ADMIN_BOT_TOKEN = os.getenv("ADMIN_BOT_TOKEN", "")
+
 OWNER_ID = 96635648
 
 DESTINATION_DEFAULT = "@Iran_Alarm_News"
 FOOTER = "@Iran_Alarm_News"
 
-# منابع مجاز؛ پنل نمی‌تواند منبع جدیدی خارج از این لیست اضافه کند.
-ALLOWED_SOURCES = [
+# منابع پیش‌فرض؛ فقط وقتی استفاده می‌شوند که config.json منبعی نداشته باشد.
+DEFAULT_SOURCES = [
     "@newscenter",
     "@Politicalnewschannell",
     "@km_ap",
     "@IranianMinds",
 ]
 
+MAX_SOURCES = 30
 MAX_MESSAGES = 10
 MAX_FINGERPRINTS = 20000
 
+# بعد از این تعداد تلاش ناموفق، پیام رد می‌شود تا منبع برای همیشه گیر نکند.
+MAX_ATTEMPTS = 4
+
+CAPTION_LIMIT = 1024
+TEXT_LIMIT = 4000
+MAX_MEDIA_BYTES = 50 * 1024 * 1024
+
+HEARTBEAT_MINUTES = 30
+ALERT_COOLDOWN_HOURS = 6
+
+# ایران: UTC+3:30 (ساعت تابستانی ندارد)
+TEHRAN = timezone(timedelta(hours=3, minutes=30))
+
 STATE_FILE = Path("data/state.json")
+STATS_FILE = Path("data/stats.json")
 CONFIG_FILE = Path("config.json")
 
 REPO = os.getenv("GITHUB_REPOSITORY", "")
@@ -62,15 +84,91 @@ log = logging.getLogger("IranAlarmNews")
 
 
 # =====================================================
+# ابزارهای کمکی
+# =====================================================
+
+def utcnow():
+    return datetime.now(timezone.utc)
+
+
+def iso(dt):
+    return dt.isoformat(timespec="seconds")
+
+
+def parse_iso(value):
+    try:
+        return datetime.fromisoformat(value) if value else None
+    except (TypeError, ValueError):
+        return None
+
+
+def normalize(text):
+    text = (text or "").lower()
+    text = text.replace("ي", "ی")
+    text = text.replace("ك", "ک")
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
+SOURCE_RE = re.compile(r"^@[A-Za-z][A-Za-z0-9_]{4,31}$")
+
+
+def clean_sources(items):
+
+    result = []
+    seen = set()
+
+    for item in items or []:
+
+        source = str(item).strip()
+
+        if not source.startswith("@"):
+            source = "@" + source
+
+        if not SOURCE_RE.match(source):
+            continue
+
+        key = source.lower()
+
+        if key in seen:
+            continue
+
+        seen.add(key)
+        result.append(source)
+
+    return result[:MAX_SOURCES]
+
+
+def clean_words(items):
+
+    result = []
+    seen = set()
+
+    for item in items or []:
+
+        word = str(item).strip()
+        key = normalize(word)
+
+        if len(key) < 2 or len(key) > 60 or key in seen:
+            continue
+
+        seen.add(key)
+        result.append(word)
+
+    return result[:300]
+
+
+# =====================================================
 # تنظیمات پیش‌فرض
 # =====================================================
 
 DEFAULT_CONFIG = {
     "destination": DESTINATION_DEFAULT,
     "paused": False,
-    "sources": ALLOWED_SOURCES,
-    "enabled_sources": ALLOWED_SOURCES,
+    "sources": DEFAULT_SOURCES,
+    "enabled_sources": DEFAULT_SOURCES,
     "admins": [],
+    "block_words": [],
     "filters": {
         "ads": True,
         "gambling": True,
@@ -85,7 +183,7 @@ DEFAULT_CONFIG = {
 
 def load_config():
 
-    config = DEFAULT_CONFIG.copy()
+    config = copy.deepcopy(DEFAULT_CONFIG)
 
     try:
         # دریافت آخرین نسخه config.json از GitHub
@@ -145,24 +243,37 @@ def load_config():
             except Exception:
                 log.exception("خواندن تنظیمات محلی هم ناموفق بود.")
 
-    # منابع مجاز را محدود می‌کنیم.
-    config["sources"] = ALLOWED_SOURCES
+    # منابع از پنل مدیریت قابل تغییر هستند.
+    sources = clean_sources(config.get("sources"))
 
-    enabled = set(
-        config.get("enabled_sources", ALLOWED_SOURCES)
-    )
+    if not sources:
+        sources = list(DEFAULT_SOURCES)
+
+    enabled_raw = config.get("enabled_sources")
+
+    if enabled_raw is None:
+        enabled = {source.lower() for source in sources}
+    else:
+        enabled = {
+            ("@" + str(item).strip().lstrip("@")).lower()
+            for item in enabled_raw
+        }
+
+    config["sources"] = sources
 
     config["enabled_sources"] = [
-        source for source in ALLOWED_SOURCES
-        if source in enabled
+        source for source in sources
+        if source.lower() in enabled
     ]
 
     # مقصد انتشار قابل تغییر نیست.
     # برای جلوگیری از تغییر ناخواسته مقصد، آن را ثابت نگه می‌داریم.
     config["destination"] = DESTINATION_DEFAULT
 
-    filters = DEFAULT_CONFIG["filters"].copy()
-    filters.update(config.get("filters", {}))
+    config["block_words"] = clean_words(config.get("block_words"))
+
+    filters = copy.deepcopy(DEFAULT_CONFIG["filters"])
+    filters.update(config.get("filters") or {})
     config["filters"] = filters
 
     return config
@@ -235,42 +346,43 @@ PROMOTIONAL_PATTERNS = [
 ]
 
 
-def normalize(text):
-    text = (text or "").lower()
-    text = text.replace("ي", "ی")
-    text = text.replace("ك", "ک")
-    text = re.sub(r"\s+", " ", text)
-    return text.strip()
-
-
 def contains_any(text, words):
     return any(normalize(word) in text for word in words)
 
 
-def is_advertisement(text, filters):
+def is_advertisement(text, filters, block_words=()):
+    """نتیجه: (رد شود؟، علت، جزئیات)"""
 
     text = normalize(text)
 
     if not text:
-        return False, ""
+        return False, "", ""
+
+    # کلمات ممنوعه‌ای که از پنل اضافه شده‌اند
+    for word in block_words:
+
+        key = normalize(word)
+
+        if key and key in text:
+            return True, "کلمه ممنوعه", word
 
     if filters.get("ads", True):
 
         if contains_any(text, GENERAL_AD_KEYWORDS):
-            return True, "تبلیغات عمومی"
+            return True, "تبلیغات عمومی", ""
 
         for pattern in PROMOTIONAL_PATTERNS:
             if re.search(pattern, text):
-                return True, "دعوت تبلیغاتی"
+                return True, "دعوت تبلیغاتی", ""
 
         for pattern in INVITE_PATTERNS:
             if re.search(pattern, text):
-                return True, "لینک دعوت"
+                return True, "لینک دعوت", ""
 
     if filters.get("gambling", True):
 
         if contains_any(text, GAMBLING_KEYWORDS):
-            return True, "قمار و شرط‌بندی"
+            return True, "قمار و شرط‌بندی", ""
 
     if filters.get("vpn_promotions", True):
 
@@ -282,14 +394,25 @@ def is_advertisement(text, filters):
         )
 
         if has_vpn and has_vpn_promotion:
-            return True, "تبلیغات VPN و پروکسی"
+            return True, "تبلیغات VPN و پروکسی", ""
 
-    return False, ""
+    return False, "", ""
 
 
 # =====================================================
 # مدیریت وضعیت
 # =====================================================
+
+def new_state():
+    return {
+        "last_ids": {},
+        "fingerprints": [],
+        "entities": {},
+        "attempts": {},
+        "alerts": {},
+        "paused": False,
+    }
+
 
 def load_state():
 
@@ -299,11 +422,7 @@ def load_state():
     )
 
     if not STATE_FILE.exists():
-
-        return {
-            "last_ids": {},
-            "fingerprints": []
-        }
+        return new_state()
 
     try:
 
@@ -311,8 +430,8 @@ def load_state():
             STATE_FILE.read_text(encoding="utf-8")
         )
 
-        state.setdefault("last_ids", {})
-        state.setdefault("fingerprints", [])
+        for key, value in new_state().items():
+            state.setdefault(key, value)
 
         return state
 
@@ -320,31 +439,269 @@ def load_state():
 
         log.exception("خطا در خواندن فایل وضعیت")
 
-        return {
-            "last_ids": {},
-            "fingerprints": []
-        }
+        return new_state()
 
 
-def save_state(state):
+def write_json_atomic(path, data, indent=2):
 
-    STATE_FILE.parent.mkdir(
+    path.parent.mkdir(
         parents=True,
         exist_ok=True
     )
 
-    temp_file = STATE_FILE.with_suffix(".tmp")
+    temp_file = path.with_suffix(".tmp")
 
     temp_file.write_text(
         json.dumps(
-            state,
+            data,
             ensure_ascii=False,
-            indent=2
+            indent=indent,
+            sort_keys=(path == STATS_FILE)
         ),
         encoding="utf-8"
     )
 
-    temp_file.replace(STATE_FILE)
+    temp_file.replace(path)
+
+
+def save_state(state):
+    write_json_atomic(STATE_FILE, state)
+
+
+# =====================================================
+# آمار و گزارش (برای پنل مدیریت)
+# =====================================================
+
+STATS_KEEP_DAYS = 14
+STATS_KEEP_REJECTED = 30
+STATS_KEEP_ERRORS = 20
+
+
+class Stats:
+
+    def __init__(self):
+        self.data = self._load()
+
+    @staticmethod
+    def _default():
+        return {
+            "version": 1,
+            "last_run": None,
+            "last_publish": None,
+            "days": {},
+            "recent_rejected": [],
+            "errors": [],
+        }
+
+    def _load(self):
+
+        data = self._default()
+
+        if STATS_FILE.exists():
+            try:
+                loaded = json.loads(
+                    STATS_FILE.read_text(encoding="utf-8")
+                )
+                if isinstance(loaded, dict):
+                    data.update(loaded)
+            except Exception:
+                log.exception("خطا در خواندن فایل آمار")
+
+        return data
+
+    # --- ابزارهای داخلی ---
+
+    def _day(self):
+
+        key = datetime.now(TEHRAN).strftime("%Y-%m-%d")
+
+        day = self.data["days"].setdefault(key, {
+            "published": 0,
+            "rejected": 0,
+            "duplicates": 0,
+            "failed": 0,
+            "sources": {},
+            "reasons": {},
+        })
+
+        return day
+
+    def _source(self, source):
+
+        return self._day()["sources"].setdefault(source, {
+            "published": 0,
+            "rejected": 0,
+            "duplicates": 0,
+            "failed": 0,
+        })
+
+    def _touch(self):
+        self.data["last_run"] = iso(utcnow())
+
+    # --- ثبت رویدادها ---
+
+    def heartbeat(self):
+
+        last = parse_iso(self.data.get("last_run"))
+
+        if (
+            last is None
+            or utcnow() - last >= timedelta(minutes=HEARTBEAT_MINUTES)
+        ):
+            self._touch()
+
+    def published(self, source):
+
+        self._touch()
+        self.data["last_publish"] = self.data["last_run"]
+
+        self._day()["published"] += 1
+        self._source(source)["published"] += 1
+
+    def rejected(self, source, reason, detail, text):
+
+        self._touch()
+
+        day = self._day()
+        day["rejected"] += 1
+        day["reasons"][reason] = day["reasons"].get(reason, 0) + 1
+        self._source(source)["rejected"] += 1
+
+        snippet = re.sub(r"\s+", " ", text or "").strip()[:100]
+
+        self.data["recent_rejected"].append({
+            "t": self.data["last_run"],
+            "source": source,
+            "reason": reason,
+            "detail": detail,
+            "snippet": snippet,
+        })
+
+        self.data["recent_rejected"] = (
+            self.data["recent_rejected"][-STATS_KEEP_REJECTED:]
+        )
+
+    def duplicate(self, source):
+
+        self._touch()
+        self._day()["duplicates"] += 1
+        self._source(source)["duplicates"] += 1
+
+    def failed(self, source):
+
+        self._touch()
+        self._day()["failed"] += 1
+        self._source(source)["failed"] += 1
+
+    def error(self, scope, message):
+
+        message = str(message)[:200]
+        errors = self.data["errors"]
+
+        # خطای تکراریِ یکسان در ۶ ساعت اخیر دوباره ثبت نمی‌شود.
+        if errors:
+            last = errors[-1]
+            last_time = parse_iso(last.get("t"))
+
+            if (
+                last.get("scope") == scope
+                and last.get("msg") == message
+                and last_time
+                and utcnow() - last_time < timedelta(hours=6)
+            ):
+                return
+
+        self._touch()
+
+        errors.append({
+            "t": self.data["last_run"],
+            "scope": scope,
+            "msg": message,
+        })
+
+        self.data["errors"] = errors[-STATS_KEEP_ERRORS:]
+
+    def save(self):
+
+        days = self.data["days"]
+
+        for key in sorted(days)[:-STATS_KEEP_DAYS]:
+            del days[key]
+
+        write_json_atomic(STATS_FILE, self.data, indent=1)
+
+
+# =====================================================
+# هشدار خطا برای Owner
+# =====================================================
+
+def send_owner_message(text):
+
+    if not ADMIN_BOT_TOKEN:
+        log.warning("ADMIN_BOT_TOKEN تنظیم نشده؛ هشدار ارسال نمی‌شود.")
+        return False
+
+    body = urllib.parse.urlencode({
+        "chat_id": OWNER_ID,
+        "text": text,
+        "parse_mode": "HTML",
+        "disable_web_page_preview": "true",
+    }).encode("utf-8")
+
+    request = urllib.request.Request(
+        f"https://api.telegram.org/bot{ADMIN_BOT_TOKEN}/sendMessage",
+        data=body,
+    )
+
+    try:
+        with urllib.request.urlopen(request, timeout=15) as response:
+            response.read()
+        return True
+
+    except Exception as error:
+        # عمداً جزئیات خطا چاپ نمی‌شود تا توکن در لاگ نیاید.
+        log.warning("ارسال هشدار به Owner ناموفق بود: %s", type(error).__name__)
+        return False
+
+
+def esc(text):
+    return (
+        str(text)
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
+
+
+async def alert(state, key, text, cooldown_hours=ALERT_COOLDOWN_HOURS):
+
+    alerts = state.setdefault("alerts", {})
+    now = utcnow()
+
+    # هشدارهای قدیمی پاک می‌شوند.
+    for old_key in list(alerts):
+        old = parse_iso(alerts[old_key])
+        if old is None or now - old > timedelta(days=3):
+            del alerts[old_key]
+
+    last = parse_iso(alerts.get(key))
+
+    if last and now - last < timedelta(hours=cooldown_hours):
+        return
+
+    if await asyncio.to_thread(send_owner_message, text):
+        alerts[key] = iso(now)
+
+
+LAST_ERROR = {"text": ""}
+
+
+def remember_error(error):
+
+    if isinstance(error, BaseException):
+        LAST_ERROR["text"] = f"{type(error).__name__}: {error}"[:200]
+    else:
+        LAST_ERROR["text"] = str(error)[:200]
 
 
 # =====================================================
@@ -405,7 +762,7 @@ def remember_message(message, state):
 # آماده‌سازی متن
 # =====================================================
 
-def prepare_text(text):
+def clean_text(text):
 
     text = text or ""
 
@@ -413,7 +770,13 @@ def prepare_text(text):
     text = USERNAME_PATTERN.sub("", text)
 
     text = re.sub(r"\n{3,}", "\n\n", text)
-    text = text.strip()
+
+    return text.strip()
+
+
+def prepare_text(text):
+
+    text = clean_text(text)
 
     if text:
         text += "\n\n"
@@ -423,23 +786,87 @@ def prepare_text(text):
     return text
 
 
+def split_text(text, limit=TEXT_LIMIT):
+
+    if len(text) <= limit:
+        return [text]
+
+    parts = []
+    current = ""
+
+    for line in text.split("\n"):
+
+        while len(line) > limit:
+
+            if current:
+                parts.append(current)
+                current = ""
+
+            parts.append(line[:limit])
+            line = line[limit:]
+
+        candidate = f"{current}\n{line}" if current else line
+
+        if len(candidate) > limit:
+            parts.append(current)
+            current = line
+        else:
+            current = candidate
+
+    if current:
+        parts.append(current)
+
+    return parts
+
+
+def has_media(message):
+    """فقط عکس و فایل قابل دانلود؛ پیش‌نمایش لینک، نظرسنجی و ... متن حساب می‌شوند."""
+
+    if not (message.photo or message.document):
+        return False
+
+    size = getattr(getattr(message, "file", None), "size", None)
+
+    if size and size > MAX_MEDIA_BYTES:
+        return False
+
+    return True
+
+
+class Runtime:
+
+    def __init__(self, client, destination, state, stats, filters, block_words):
+        self.client = client
+        self.destination = destination
+        self.state = state
+        self.stats = stats
+        self.filters = filters
+        self.block_words = block_words
+
+
+async def send_long_text(rt, text):
+
+    for part in split_text(text):
+
+        await rt.client.send_message(
+            rt.destination,
+            part,
+            link_preview=False
+        )
+
+
 # =====================================================
 # انتشار پیام تکی
 # =====================================================
 
-async def publish_single(
-    client,
-    destination,
-    message,
-    state,
-    filters
-):
+async def publish_single(rt, source, message):
 
     original_text = message.message or ""
 
-    rejected, reason = is_advertisement(
+    rejected, reason, detail = is_advertisement(
         original_text,
-        filters
+        rt.filters,
+        rt.block_words
     )
 
     if rejected:
@@ -450,26 +877,40 @@ async def publish_single(
             reason
         )
 
+        rt.stats.rejected(source, reason, detail, original_text)
+
         return True
 
-    if is_duplicate(message, state):
+    if is_duplicate(message, rt.state):
 
         log.info(
             "پیام تکراری رد شد: %s",
             message.id
         )
 
+        rt.stats.duplicate(source)
+
         return True
 
     final_text = prepare_text(original_text)
+    with_media = has_media(message)
+
+    if not with_media and not clean_text(original_text):
+
+        log.info(
+            "پیام %s متن یا رسانه‌ی قابل انتشار ندارد",
+            message.id
+        )
+
+        return True
 
     try:
 
-        if message.media:
+        if with_media:
 
             with tempfile.TemporaryDirectory() as temp_dir:
 
-                media_path = await client.download_media(
+                media_path = await rt.client.download_media(
                     message,
                     file=temp_dir
                 )
@@ -481,27 +922,34 @@ async def publish_single(
                         message.id
                     )
 
+                    remember_error("دانلود رسانه ناموفق بود")
+
                     return False
 
-                await client.send_file(
-                    destination,
-                    media_path,
-                    caption=final_text
-                )
+                if len(final_text) <= CAPTION_LIMIT:
 
-        elif final_text:
+                    await rt.client.send_file(
+                        rt.destination,
+                        media_path,
+                        caption=final_text
+                    )
 
-            await client.send_message(
-                destination,
-                final_text,
-                link_preview=False
-            )
+                else:
+                    # کپشن‌های طولانی از حد تلگرام بیشترند؛ متن جدا ارسال می‌شود.
+                    await rt.client.send_file(
+                        rt.destination,
+                        media_path
+                    )
+
+                    await send_long_text(rt, final_text)
 
         else:
 
-            return True
+            await send_long_text(rt, final_text)
 
-        remember_message(message, state)
+        remember_message(message, rt.state)
+
+        rt.stats.published(source)
 
         log.info(
             "پیام %s منتشر شد",
@@ -513,7 +961,9 @@ async def publish_single(
     except FloodWaitError:
         raise
 
-    except Exception:
+    except Exception as error:
+
+        remember_error(error)
 
         log.exception(
             "خطا در انتشار پیام %s",
@@ -527,22 +977,17 @@ async def publish_single(
 # انتشار آلبوم
 # =====================================================
 
-async def publish_album(
-    client,
-    destination,
-    album,
-    state,
-    filters
-):
+async def publish_album(rt, source, album):
 
     # اگر یکی از اعضای آلبوم تبلیغاتی باشد،
     # کل آلبوم رد می‌شود.
 
     for message in album:
 
-        rejected, reason = is_advertisement(
+        rejected, reason, detail = is_advertisement(
             message.message or "",
-            filters
+            rt.filters,
+            rt.block_words
         )
 
         if rejected:
@@ -552,26 +997,48 @@ async def publish_album(
                 reason
             )
 
+            rt.stats.rejected(
+                source,
+                reason,
+                detail,
+                message.message or ""
+            )
+
             return True
 
     if any(
-        is_duplicate(message, state)
+        is_duplicate(message, rt.state)
         for message in album
     ):
 
         log.info("آلبوم تکراری رد شد")
+
+        rt.stats.duplicate(source)
+
         return True
+
+    members = [message for message in album if has_media(message)]
+
+    if not members:
+        return True
+
+    # کپشن آلبوم: اولین کپشنی که در بین اعضا وجود دارد
+    caption_source = next(
+        (message.message for message in album if message.message),
+        ""
+    )
+
+    final_caption = prepare_text(caption_source)
 
     try:
 
         with tempfile.TemporaryDirectory() as temp_dir:
 
             media_paths = []
-            captions = []
 
-            for index, message in enumerate(album):
+            for message in members:
 
-                media_path = await client.download_media(
+                media_path = await rt.client.download_media(
                     message,
                     file=temp_dir
                 )
@@ -582,47 +1049,33 @@ async def publish_album(
                         "دانلود بخشی از آلبوم ناموفق بود"
                     )
 
+                    remember_error("دانلود بخشی از آلبوم ناموفق بود")
+
                     return False
 
                 media_paths.append(media_path)
 
-                original_caption = message.message or ""
+            if len(final_caption) <= CAPTION_LIMIT:
 
-                if index == 0:
+                await rt.client.send_file(
+                    rt.destination,
+                    media_paths,
+                    caption=[final_caption] + [None] * (len(media_paths) - 1)
+                )
 
-                    captions.append(
-                        prepare_text(original_caption)
-                    )
+            else:
 
-                elif original_caption:
+                await rt.client.send_file(
+                    rt.destination,
+                    media_paths
+                )
 
-                    caption = URL_PATTERN.sub(
-                        "",
-                        original_caption
-                    )
-
-                    caption = USERNAME_PATTERN.sub(
-                        "",
-                        caption
-                    )
-
-                    captions.append(caption.strip())
-
-                else:
-
-                    captions.append(None)
-
-            if not media_paths:
-                return True
-
-            await client.send_file(
-                destination,
-                media_paths,
-                caption=captions
-            )
+                await send_long_text(rt, final_caption)
 
         for message in album:
-            remember_message(message, state)
+            remember_message(message, rt.state)
+
+        rt.stats.published(source)
 
         log.info(
             "آلبوم با %s فایل منتشر شد",
@@ -634,24 +1087,90 @@ async def publish_album(
     except FloodWaitError:
         raise
 
-    except Exception:
+    except Exception as error:
+
+        remember_error(error)
 
         log.exception("خطا در انتشار آلبوم")
+
         return False
+
+
+# =====================================================
+# پیدا کردن کانال منبع (با ذخیره‌ی شناسه برای جلوگیری از FloodWait)
+# =====================================================
+
+async def resolve_source(rt, source, use_cache=True):
+
+    key = source.lower()
+    cached = rt.state["entities"].get(key) if use_cache else None
+
+    if cached:
+        return InputPeerChannel(
+            channel_id=cached["id"],
+            access_hash=cached["hash"]
+        )
+
+    entity = await rt.client.get_entity(source)
+
+    peer = get_input_peer(entity)
+
+    if isinstance(peer, InputPeerChannel):
+        rt.state["entities"][key] = {
+            "id": peer.channel_id,
+            "hash": peer.access_hash,
+        }
+
+    return entity
+
+
+async def read_latest(rt, source):
+
+    key = source.lower()
+    from_cache = key in rt.state["entities"]
+
+    for attempt in (1, 2):
+
+        try:
+
+            entity = await resolve_source(
+                rt,
+                source,
+                use_cache=(attempt == 1)
+            )
+
+            messages = []
+
+            async for message in rt.client.iter_messages(
+                entity,
+                limit=MAX_MESSAGES
+            ):
+
+                if message and not message.action:
+                    messages.append(message)
+
+            return messages
+
+        except FloodWaitError:
+            raise
+
+        except (RPCError, ValueError):
+
+            # شناسه‌ی ذخیره‌شده ممکن است قدیمی شده باشد؛ یک بار از نو پیدا می‌شود.
+            if attempt == 1 and from_cache:
+                rt.state["entities"].pop(key, None)
+                continue
+
+            raise
 
 
 # =====================================================
 # بررسی هر کانال
 # =====================================================
 
-async def process_source(
-    client,
-    source,
-    destination,
-    state,
-    filters
-):
+async def process_source(rt, source):
 
+    state = rt.state
     source_key = source.lower()
 
     log.info(
@@ -659,17 +1178,7 @@ async def process_source(
         source
     )
 
-    entity = await client.get_entity(source)
-
-    latest_messages = []
-
-    async for message in client.iter_messages(
-        entity,
-        limit=MAX_MESSAGES
-    ):
-
-        if message and not message.action:
-            latest_messages.append(message)
+    latest_messages = await read_latest(rt, source)
 
     if not latest_messages:
 
@@ -764,25 +1273,62 @@ async def process_source(
 
     for items, unit_last_id in units:
 
-        if len(items) > 1 or items[0].grouped_id:
+        attempt_key = f"{source_key}:{unit_last_id}"
+        attempts = int(state["attempts"].get(attempt_key, 0))
 
-            success = await publish_album(
-                client,
-                destination,
-                items,
-                state,
-                filters
+        # پیامی که چند بار پشت‌سرهم شکست خورده، رد می‌شود تا منبع گیر نکند.
+        if attempts >= MAX_ATTEMPTS:
+
+            reason = LAST_ERROR["text"] or "نامشخص"
+
+            log.error(
+                "پیام %s از %s بعد از %s تلاش رد شد: %s",
+                unit_last_id,
+                source,
+                attempts,
+                reason
             )
 
-        else:
+            rt.stats.failed(source)
+            rt.stats.error(source, f"پیام {unit_last_id} رد شد: {reason}")
 
-            success = await publish_single(
-                client,
-                destination,
-                items[0],
+            await alert(
                 state,
-                filters
+                f"skip:{attempt_key}",
+                "⚠️ <b>پیامی منتشر نشد</b>\n\n"
+                f"📡 منبع: {esc(source)}\n"
+                f"🔢 شناسه پیام: {unit_last_id}\n"
+                f"🧾 علت: <code>{esc(reason)}</code>\n\n"
+                f"بعد از {attempts} تلاش ناموفق این پیام رد شد "
+                "و بررسی منبع ادامه پیدا کرد.",
+                cooldown_hours=24
             )
+
+            state["attempts"].pop(attempt_key, None)
+            state["last_ids"][source_key] = unit_last_id
+            save_state(state)
+
+            continue
+
+        # قبل از تلاش ثبت می‌شود تا اگر برنامه وسط کار متوقف شد هم شمرده شود.
+        state["attempts"][attempt_key] = attempts + 1
+        save_state(state)
+
+        try:
+
+            if len(items) > 1 or items[0].grouped_id:
+
+                success = await publish_album(rt, source, items)
+
+            else:
+
+                success = await publish_single(rt, source, items[0])
+
+        except FloodWaitError:
+
+            # محدودیت تلگرام شکست پیام نیست.
+            state["attempts"][attempt_key] = attempts
+            raise
 
         if not success:
 
@@ -793,16 +1339,40 @@ async def process_source(
 
             break
 
+        state["attempts"].pop(attempt_key, None)
         state["last_ids"][source_key] = unit_last_id
 
         save_state(state)
+        rt.stats.save()
 
 
 # =====================================================
 # اجرای اصلی
 # =====================================================
 
+async def report_source_error(rt, source, error):
+
+    message = f"{type(error).__name__}: {error}"[:200]
+
+    rt.stats.error(source, message)
+
+    await alert(
+        rt.state,
+        f"source:{source.lower()}",
+        "⚠️ <b>خطا در یک منبع خبری</b>\n\n"
+        f"📡 منبع: {esc(source)}\n"
+        f"🧾 خطا: <code>{esc(message)}</code>\n\n"
+        "اگر کانال حذف یا خصوصی شده، از پنل حذفش کن.",
+        cooldown_hours=12
+    )
+
+
 async def main():
+
+    stats = Stats()
+    state = load_state()
+
+    stats.heartbeat()
 
     # تنظیمات در هر اجرای برنامه تازه دریافت می‌شوند.
     config = load_config()
@@ -813,12 +1383,42 @@ async def main():
             "انتشار توسط پنل مدیریت متوقف شده است."
         )
 
+        state["paused"] = True
+
+        save_state(state)
+        stats.save()
+
         return
+
+    if state.get("paused"):
+
+        # بعد از ادامه‌ی انتشار، اخبار زمان توقف منتشر نمی‌شوند.
+        state["paused"] = False
+        state["last_ids"] = {}
+
+        log.info(
+            "انتشار ادامه پیدا کرد؛ از همین لحظه شروع می‌شود."
+        )
 
     enabled_sources = config["enabled_sources"]
 
     destination_name = config["destination"]
     filters = config["filters"]
+    block_words = config["block_words"]
+
+    # منبعی که خاموش یا حذف شده فراموش می‌شود؛
+    # در صورت روشن شدن دوباره، اخبار قدیمی منتشر نمی‌شود.
+    enabled_keys = {source.lower() for source in enabled_sources}
+
+    for key in list(state["last_ids"]):
+        if key not in enabled_keys:
+            del state["last_ids"][key]
+
+    known_keys = {source.lower() for source in config["sources"]}
+
+    for key in list(state["entities"]):
+        if key not in known_keys:
+            del state["entities"][key]
 
     if not enabled_sources:
 
@@ -826,9 +1426,10 @@ async def main():
             "هیچ منبع خبری فعالی وجود ندارد."
         )
 
-        return
+        save_state(state)
+        stats.save()
 
-    state = load_state()
+        return
 
     client = TelegramClient(
         StringSession(TG_SESSION),
@@ -838,12 +1439,71 @@ async def main():
 
     log.info("اتصال به تلگرام...")
 
-    await client.start()
+    authorized = False
+
+    try:
+        await client.connect()
+        authorized = await client.is_user_authorized()
+
+    except Exception:
+        log.exception("اتصال به تلگرام ناموفق بود")
+
+    if not authorized:
+
+        log.error("سشن تلگرام معتبر نیست یا اتصال برقرار نشد.")
+
+        stats.error("system", "سشن تلگرام نامعتبر است یا اتصال برقرار نشد")
+
+        await alert(
+            state,
+            "session",
+            "🚨 <b>هشدار ایران آلارم</b>\n\n"
+            "اتصال ناشر به تلگرام برقرار نشد و انتشار انجام نمی‌شود.\n"
+            "احتمالاً سشن (TG_SESSION) منقضی یا باطل شده؛ "
+            "یک سشن جدید بساز و در Secrets گیت‌هاب جایگزین کن."
+        )
+
+        save_state(state)
+        stats.save()
+
+        try:
+            await client.disconnect()
+        except Exception:
+            pass
+
+        return
 
     try:
 
-        destination = await client.get_entity(
-            destination_name
+        try:
+            destination = await client.get_entity(
+                destination_name
+            )
+
+        except Exception as error:
+
+            log.exception("پیدا کردن کانال مقصد ناموفق بود")
+
+            stats.error("system", f"کانال مقصد: {type(error).__name__}")
+
+            await alert(
+                state,
+                "destination",
+                "🚨 <b>هشدار ایران آلارم</b>\n\n"
+                f"کانال مقصد ({esc(destination_name)}) پیدا نشد "
+                "یا حساب ناشر به آن دسترسی ندارد.\n"
+                f"🧾 <code>{esc(type(error).__name__)}</code>"
+            )
+
+            return
+
+        rt = Runtime(
+            client,
+            destination,
+            state,
+            stats,
+            filters,
+            block_words
         )
 
         log.info(
@@ -854,13 +1514,7 @@ async def main():
 
             try:
 
-                await process_source(
-                    client,
-                    source,
-                    destination,
-                    state,
-                    filters
-                )
+                await process_source(rt, source)
 
             except FloodWaitError as error:
 
@@ -869,27 +1523,52 @@ async def main():
                     error.seconds
                 )
 
-                await asyncio.sleep(
-                    error.seconds
-                )
+                if error.seconds <= 60:
 
-            except (RPCError, ValueError):
+                    await asyncio.sleep(
+                        error.seconds + 1
+                    )
+
+                else:
+
+                    stats.error(
+                        "system",
+                        f"محدودیت تلگرام (FloodWait) {error.seconds} ثانیه"
+                    )
+
+                    await alert(
+                        state,
+                        "flood",
+                        "⏳ <b>محدودیت موقت تلگرام</b>\n\n"
+                        f"تلگرام درخواست انتظار {error.seconds} ثانیه‌ای داد؛ "
+                        "این دور بررسی متوقف شد و دور بعد دوباره تلاش می‌شود.",
+                        cooldown_hours=2
+                    )
+
+                    break
+
+            except (RPCError, ValueError) as error:
 
                 log.exception(
                     "خطا در منبع: %s",
                     source
                 )
 
-            except Exception:
+                await report_source_error(rt, source, error)
+
+            except Exception as error:
 
                 log.exception(
                     "خطای پیش‌بینی‌نشده در منبع: %s",
                     source
                 )
 
+                await report_source_error(rt, source, error)
+
     finally:
 
         save_state(state)
+        stats.save()
 
         await client.disconnect()
 
