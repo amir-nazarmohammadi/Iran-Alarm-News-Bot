@@ -1,8 +1,8 @@
 {
   "last_ids": {
-    "@newscenter": 76222,
-    "@politicalnewschannell": 42973,
-    "@km_ap": 234945,
+    "@newscenter": 76224,
+    "@politicalnewschannell": 42974,
+    "@km_ap": 234946,
     "@iranianminds": 32017
   },
   "fingerprints": [
@@ -2016,6 +2016,31 @@
     "2e6172f01a16594b0fedd8951b3f4ea7e310fc8ad8a524a3b20884c4004b8928",
     "07261f54fdff583e87c3de6bd09460386cf7359ad8995e0a52735c3df339fd54",
     "d94a789f00dc4c62bc308b68e320b367105db95196ee3e065b6d2388c88cc0fc",
-    "28521388d68e1f28f7e967d0b5c0098ac089e041ad01ab542d7ec35606931ea5"
-  ]
+    "28521388d68e1f28f7e967d0b5c0098ac089e041ad01ab542d7ec35606931ea5",
+    "f797381178ecb9464b0c43ed00849788cab004f2af24aa6c61c34257a970b4fc",
+    "e26d509915a272913303b7a1263f3a074a58b886dc6c91d885f1983a73476471",
+    "94801ecae47e646d687a7954008a1f5cc8472d8b2beaeeb7dd05f04885147a33",
+    "da136bee7e5d40c82bf8b040ed12327706eaa605cf2251cb3946542c23fba031"
+  ],
+  "entities": {
+    "@newscenter": {
+      "id": 1376955766,
+      "hash": 7735363438333318869
+    },
+    "@politicalnewschannell": {
+      "id": 2125773929,
+      "hash": -8216802706918050680
+    },
+    "@km_ap": {
+      "id": 1419583991,
+      "hash": -3579514559439248526
+    },
+    "@iranianminds": {
+      "id": 2304382606,
+      "hash": -1729392782433262396
+    }
+  },
+  "attempts": {},
+  "alerts": {},
+  "paused": false
 }
