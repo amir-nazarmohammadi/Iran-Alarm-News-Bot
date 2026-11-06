@@ -1,4 +1,3 @@
-
 name: Iran Alarm News Publisher
 
 on:
@@ -7,6 +6,11 @@ on:
   push:
     branches:
       - main
+    # تغییرات پنل مدیریت (config.json) و وضعیت ناشر اجرای جدید ایجاد نمی‌کنند
+    paths-ignore:
+      - "config.json"
+      - "data/**"
+      - "README.md"
 
   schedule:
     # اجرای مجدد خودکار در دقیقه ۱۱ و ۴۱ هر ساعت
@@ -47,6 +51,9 @@ jobs:
           API_HASH: ${{ secrets.API_HASH }}
           TG_SESSION: ${{ secrets.TG_SESSION }}
 
+          # فقط برای ارسال هشدار خطا به Owner
+          ADMIN_BOT_TOKEN: ${{ secrets.ADMIN_BOT_TOKEN }}
+
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           CONFIG_BRANCH: main
@@ -60,8 +67,6 @@ jobs:
           INTERVAL=300
           RUN_FOR=$((340 * 60))
           START_TIME=$(date +%s)
-
-          BASE_SHA=$(git rev-parse HEAD)
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -79,14 +84,24 @@ jobs:
               break
             fi
 
+            # تغییر config.json (پنل مدیریت) یا data/ نیازی به راه‌اندازی مجدد ندارد؛
+            # اما اگر کد یا workflow عوض شده باشد، اجرای بعدی با کد جدید شروع می‌شود.
             git fetch origin main
 
-            REMOTE_SHA=$(git rev-parse origin/main)
+            if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
 
-            if [ "$REMOTE_SHA" != "$BASE_SHA" ]; then
-              echo "Repository changed externally."
-              echo "Restarting through the next scheduled workflow."
-              break
+              if git diff --name-only HEAD...origin/main | grep -qv -E '^(config\.json|data/)'; then
+                echo "Code changed in the repository."
+                echo "Restarting through the next scheduled workflow."
+                break
+              fi
+
+              if ! git rebase origin/main; then
+                git rebase --abort
+                echo "Could not sync with the repository. Stopping."
+                break
+              fi
+
             fi
 
             CYCLE_START=$(date +%s)
@@ -100,28 +115,49 @@ jobs:
               echo "Publisher returned an error or timed out."
             }
 
-            # ذخیره وضعیت پیام‌های پردازش‌شده
-            git add data/state.json
+            # ذخیره وضعیت پیام‌ها و آمار (برای پنل مدیریت)
+            git add data
 
             if ! git diff --cached --quiet; then
 
               git commit -m "Update Iran Alarm publisher state"
 
-              # بررسی تغییرات هم‌زمان در مخزن
-              git fetch origin main
-              REMOTE_SHA=$(git rev-parse origin/main)
+              PUSHED=0
+              RESTART=0
 
-              if [ "$REMOTE_SHA" != "$BASE_SHA" ]; then
-                echo "Remote repository changed during this cycle."
-                echo "Stopping to avoid overwriting external changes."
+              # پنل مدیریت فقط config.json را عوض می‌کند و ناشر فقط data/ را؛
+              # پس با rebase هر دو تغییر حفظ می‌شود.
+              for ATTEMPT in 1 2 3; do
+
+                git fetch origin main
+
+                if git diff --name-only HEAD...origin/main | grep -qv -E '^(config\.json|data/)'; then
+                  RESTART=1
+                fi
+
+                if ! git rebase origin/main; then
+                  git rebase --abort
+                  break
+                fi
+
+                if git push origin HEAD:main; then
+                  PUSHED=1
+                  break
+                fi
+
+                sleep 5
+
+              done
+
+              if [ "$PUSHED" -ne 1 ]; then
+                echo "Could not push state. Will retry in next run."
                 break
               fi
 
-              if git push origin HEAD:main; then
-                BASE_SHA=$(git rev-parse HEAD)
-                echo "Publisher state saved."
-              else
-                echo "Could not push state. Will retry in next run."
+              echo "Publisher state saved."
+
+              if [ "$RESTART" -eq 1 ]; then
+                echo "Code changed during this cycle. Restarting through the next scheduled workflow."
                 break
               fi
 
