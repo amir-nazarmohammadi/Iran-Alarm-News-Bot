@@ -3,14 +3,14 @@
   "2026-11-07": {
    "duplicates": 2,
    "failed": 0,
-   "published": 445,
+   "published": 450,
    "reasons": {
     "تبلیغات عمومی": 5,
     "دعوت تبلیغاتی": 1,
-    "قمار و شرط‌بندی": 2,
+    "قمار و شرط‌بندی": 3,
     "لینک دعوت": 1
    },
-   "rejected": 9,
+   "rejected": 10,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -21,27 +21,27 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 140,
-     "rejected": 1
+     "published": 141,
+     "rejected": 2
     },
     "@km_ap": {
      "duplicates": 2,
      "failed": 0,
-     "published": 183,
+     "published": 186,
      "rejected": 2
     },
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 81,
+     "published": 82,
      "rejected": 5
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-07T18:20:23+00:00",
- "last_run": "2026-11-07T18:20:23+00:00",
+ "last_publish": "2026-11-07T18:25:40+00:00",
+ "last_run": "2026-11-07T18:25:40+00:00",
  "recent_rejected": [
   {
    "detail": "",
@@ -105,6 +105,13 @@
    "snippet": "🚨 لیست کامل استان های تعطیل شده مشخص شد👇 https://t.me/+3Yulmui1gikwYmM0",
    "source": "@newscenter",
    "t": "2026-11-07T17:40:06+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "قمار و شرط‌بندی",
+   "snippet": "‼️🇫🇷نامزد انتخابات ریاست‌جمهوری فرانسه، ژان-لوک ملانشون: ما طرح ماکرون برای احداث نیروگاه‌های هسته‌ا",
+   "source": "@Politicalnewschannell",
+   "t": "2026-11-07T18:25:11+00:00"
   }
  ],
  "version": 1
