@@ -3,7 +3,7 @@
   "2026-11-07": {
    "duplicates": 1,
    "failed": 0,
-   "published": 193,
+   "published": 194,
    "reasons": {
     "تبلیغات عمومی": 3
    },
@@ -24,7 +24,7 @@
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 97,
+     "published": 98,
      "rejected": 0
     },
     "@newscenter": {
@@ -37,8 +37,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-07T08:29:58+00:00",
- "last_run": "2026-11-07T08:29:58+00:00",
+ "last_publish": "2026-11-07T08:34:40+00:00",
+ "last_run": "2026-11-07T08:34:40+00:00",
  "recent_rejected": [
   {
    "detail": "",
