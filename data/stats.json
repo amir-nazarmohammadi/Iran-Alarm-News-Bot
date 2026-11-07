@@ -3,7 +3,7 @@
   "2026-11-07": {
    "duplicates": 1,
    "failed": 0,
-   "published": 218,
+   "published": 221,
    "reasons": {
     "تبلیغات عمومی": 3
    },
@@ -24,21 +24,21 @@
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 108,
+     "published": 110,
      "rejected": 0
     },
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 36,
+     "published": 37,
      "rejected": 2
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-07T09:59:52+00:00",
- "last_run": "2026-11-07T09:59:52+00:00",
+ "last_publish": "2026-11-07T10:04:46+00:00",
+ "last_run": "2026-11-07T10:04:46+00:00",
  "recent_rejected": [
   {
    "detail": "",
