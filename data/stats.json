@@ -3,28 +3,29 @@
   "2026-11-07": {
    "duplicates": 1,
    "failed": 0,
-   "published": 229,
+   "published": 232,
    "reasons": {
-    "تبلیغات عمومی": 3
+    "تبلیغات عمومی": 3,
+    "دعوت تبلیغاتی": 1
    },
-   "rejected": 3,
+   "rejected": 4,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
      "failed": 0,
-     "published": 7,
-     "rejected": 0
+     "published": 8,
+     "rejected": 1
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 70,
+     "published": 71,
      "rejected": 1
     },
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 114,
+     "published": 115,
      "rejected": 0
     },
     "@newscenter": {
@@ -37,8 +38,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-07T10:34:48+00:00",
- "last_run": "2026-11-07T10:34:48+00:00",
+ "last_publish": "2026-11-07T10:40:27+00:00",
+ "last_run": "2026-11-07T10:40:27+00:00",
  "recent_rejected": [
   {
    "detail": "",
@@ -60,6 +61,13 @@
    "snippet": "🇺🇸⚖️پیت هگست با اتهام نقض قوانین فدرال آمریکا روبه‌رو شد. به گزارش واشنگتن‌پست، هگست متهم است که از ",
    "source": "@Politicalnewschannell",
    "t": "2026-11-07T08:12:09+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "دعوت تبلیغاتی",
+   "snippet": "🔴 با اینکه بانو یاسمین پهلوی گفت پلیس آلمان اجازه حضور بهمون توی مراسم نداده چون ایران تهدید کرده مر",
+   "source": "@IranianMinds",
+   "t": "2026-11-07T10:40:23+00:00"
   }
  ],
  "version": 1
