@@ -3,7 +3,7 @@
   "2026-11-07": {
    "duplicates": 2,
    "failed": 0,
-   "published": 394,
+   "published": 395,
    "reasons": {
     "تبلیغات عمومی": 5,
     "دعوت تبلیغاتی": 1,
@@ -32,15 +32,15 @@
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 66,
+     "published": 67,
      "rejected": 4
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-07T16:45:09+00:00",
- "last_run": "2026-11-07T16:45:09+00:00",
+ "last_publish": "2026-11-07T16:50:03+00:00",
+ "last_run": "2026-11-07T16:50:03+00:00",
  "recent_rejected": [
   {
    "detail": "",
