@@ -3,7 +3,7 @@
   "2026-11-07": {
    "duplicates": 1,
    "failed": 0,
-   "published": 187,
+   "published": 190,
    "reasons": {
     "تبلیغات عمومی": 3
    },
@@ -18,7 +18,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 53,
+     "published": 56,
      "rejected": 1
     },
     "@km_ap": {
@@ -37,8 +37,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-07T08:20:37+00:00",
- "last_run": "2026-11-07T08:20:37+00:00",
+ "last_publish": "2026-11-07T08:26:02+00:00",
+ "last_run": "2026-11-07T08:26:02+00:00",
  "recent_rejected": [
   {
    "detail": "",
