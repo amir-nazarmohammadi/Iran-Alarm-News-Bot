@@ -39,9 +39,9 @@
    }
   },
   "2026-11-08": {
-   "duplicates": 2,
+   "duplicates": 3,
    "failed": 0,
-   "published": 484,
+   "published": 487,
    "reasons": {
     "تبلیغات VPN و پروکسی": 1,
     "تبلیغات عمومی": 5,
@@ -64,23 +64,23 @@
      "rejected": 2
     },
     "@km_ap": {
-     "duplicates": 0,
+     "duplicates": 1,
      "failed": 0,
-     "published": 210,
+     "published": 211,
      "rejected": 2
     },
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 73,
+     "published": 75,
      "rejected": 7
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-08T18:55:49+00:00",
- "last_run": "2026-11-08T18:55:49+00:00",
+ "last_publish": "2026-11-08T19:00:52+00:00",
+ "last_run": "2026-11-08T19:00:52+00:00",
  "recent_rejected": [
   {
    "detail": "",
