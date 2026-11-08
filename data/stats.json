@@ -41,13 +41,13 @@
   "2026-11-08": {
    "duplicates": 2,
    "failed": 0,
-   "published": 348,
+   "published": 349,
    "reasons": {
     "تبلیغات VPN و پروکسی": 1,
     "تبلیغات عمومی": 4,
-    "دعوت تبلیغاتی": 2
+    "دعوت تبلیغاتی": 3
    },
-   "rejected": 7,
+   "rejected": 8,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
@@ -58,7 +58,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 113,
+     "published": 114,
      "rejected": 2
     },
     "@km_ap": {
@@ -71,14 +71,14 @@
      "duplicates": 1,
      "failed": 0,
      "published": 45,
-     "rejected": 4
+     "rejected": 5
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-08T14:50:42+00:00",
- "last_run": "2026-11-08T14:50:42+00:00",
+ "last_publish": "2026-11-08T14:55:53+00:00",
+ "last_run": "2026-11-08T14:55:53+00:00",
  "recent_rejected": [
   {
    "detail": "",
@@ -212,6 +212,13 @@
    "snippet": "⚡ بری بت | BerryBet 🔥 مسابقات امروز 👍 ⚽️ کرستال پالاس - لیورپول 🌎 ساعت ۱۷:۳۰ ⚽️ ساندرلند - چلسی 🌎 سا",
    "source": "@newscenter",
    "t": "2026-11-08T14:20:40+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "دعوت تبلیغاتی",
+   "snippet": "ایزنکوت برای دریافت مجوز تشکیل دولت از رئیس‌جمهور اسرائیل به آنجا رفت.",
+   "source": "@newscenter",
+   "t": "2026-11-08T14:55:40+00:00"
   }
  ],
  "version": 1
