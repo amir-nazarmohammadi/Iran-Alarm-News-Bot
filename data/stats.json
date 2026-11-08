@@ -39,17 +39,17 @@
    }
   },
   "2026-11-08": {
-   "duplicates": 4,
+   "duplicates": 5,
    "failed": 0,
-   "published": 534,
+   "published": 541,
    "reasons": {
     "تبلیغات VPN و پروکسی": 2,
-    "تبلیغات عمومی": 5,
+    "تبلیغات عمومی": 6,
     "دعوت تبلیغاتی": 3,
     "قمار و شرط‌بندی": 1,
     "لینک دعوت": 1
    },
-   "rejected": 12,
+   "rejected": 13,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
@@ -60,27 +60,27 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 166,
+     "published": 170,
      "rejected": 2
     },
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 221,
+     "published": 224,
      "rejected": 3
     },
     "@newscenter": {
-     "duplicates": 2,
+     "duplicates": 3,
      "failed": 0,
      "published": 88,
-     "rejected": 7
+     "rejected": 8
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-08T19:51:09+00:00",
- "last_run": "2026-11-08T19:51:09+00:00",
+ "last_publish": "2026-11-08T19:56:38+00:00",
+ "last_run": "2026-11-08T19:56:38+00:00",
  "recent_rejected": [
   {
    "detail": "",
@@ -249,6 +249,13 @@
    "snippet": "❌ قبل از قطعی احتمالی اینترنت، آماده باشید! با افزایش نگرانی‌ها درباره شرایط منطقه و احتمال محدودیت ",
    "source": "@km_ap",
    "t": "2026-11-08T19:25:51+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "🔥🏆 یک گل جلو بیفت، برنده شو! ☑️ با قابلیت جدید «یک گل جلو» در بری بت، لازم نیست تا سوت پایان منتظر ب",
+   "source": "@newscenter",
+   "t": "2026-11-08T19:55:52+00:00"
   }
  ],
  "version": 1
