@@ -41,13 +41,13 @@
   "2026-11-08": {
    "duplicates": 1,
    "failed": 0,
-   "published": 127,
+   "published": 129,
    "reasons": {
     "تبلیغات VPN و پروکسی": 1,
-    "تبلیغات عمومی": 2,
+    "تبلیغات عمومی": 3,
     "دعوت تبلیغاتی": 2
    },
-   "rejected": 5,
+   "rejected": 6,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -64,21 +64,21 @@
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 61,
+     "published": 62,
      "rejected": 1
     },
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 20,
-     "rejected": 2
+     "published": 21,
+     "rejected": 3
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-08T06:41:00+00:00",
- "last_run": "2026-11-08T06:41:00+00:00",
+ "last_publish": "2026-11-08T06:45:49+00:00",
+ "last_run": "2026-11-08T06:45:49+00:00",
  "recent_rejected": [
   {
    "detail": "",
@@ -198,6 +198,13 @@
    "snippet": "استاندار محترم کرمانشاه، جناب آقای دکتر حبیبی همه ما از اهداف و نیت امام جمعه محترم کرمانشاه آگاه هس",
    "source": "@km_ap",
    "t": "2026-11-08T05:00:34+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "⚡ بری بت | BerryBet 🔥 مسابقات امروز 👍 ⚽️ کرستال پالاس - لیورپول 🌎 ساعت ۱۷:۳۰ ⚽️ ساندرلند - چلسی 🌎 سا",
+   "source": "@newscenter",
+   "t": "2026-11-08T06:45:46+00:00"
   }
  ],
  "version": 1
