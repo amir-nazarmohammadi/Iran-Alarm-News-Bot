@@ -80,17 +80,17 @@
   "2026-11-09": {
    "duplicates": 2,
    "failed": 0,
-   "published": 496,
+   "published": 510,
    "reasons": {
-    "تبلیغات عمومی": 7,
+    "تبلیغات عمومی": 8,
     "دعوت تبلیغاتی": 1
    },
-   "rejected": 8,
+   "rejected": 9,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
      "failed": 0,
-     "published": 59,
+     "published": 69,
      "rejected": 0
     },
     "@Politicalnewschannell": {
@@ -102,29 +102,22 @@
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 158,
+     "published": 161,
      "rejected": 0
     },
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 80,
-     "rejected": 7
+     "published": 81,
+     "rejected": 8
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-09T20:11:14+00:00",
- "last_run": "2026-11-09T20:11:14+00:00",
+ "last_publish": "2026-11-09T20:14:11+00:00",
+ "last_run": "2026-11-09T20:14:11+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "دعوت تبلیغاتی",
-   "snippet": "🔴 با اینکه بانو یاسمین پهلوی گفت پلیس آلمان اجازه حضور بهمون توی مراسم نداده چون ایران تهدید کرده مر",
-   "source": "@IranianMinds",
-   "t": "2026-11-07T10:40:23+00:00"
-  },
   {
    "detail": "",
    "reason": "قمار و شرط‌بندی",
@@ -327,6 +320,13 @@
    "snippet": "💢🇺🇸 یک خودروی مدل آئودی A4 به یک تابلوی تبلیغاتی در پارک لافایت اسکوئر، که در شمال کاخ سفید قرار دار",
    "source": "@Politicalnewschannell",
    "t": "2026-11-09T16:31:50+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "🎁برای کاربران بری‌بت🎁 🚨بونوس‌های فعال ورزشی🚨 👑👑 بونوس خوش آمدگویی👑 👑بالاترین ضرایب بین تمامی سایت ها",
+   "source": "@newscenter",
+   "t": "2026-11-09T20:12:32+00:00"
   }
  ],
  "version": 1
