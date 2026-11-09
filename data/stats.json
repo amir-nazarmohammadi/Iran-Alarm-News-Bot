@@ -80,7 +80,7 @@
   "2026-11-09": {
    "duplicates": 0,
    "failed": 0,
-   "published": 294,
+   "published": 297,
    "reasons": {
     "تبلیغات عمومی": 4,
     "دعوت تبلیغاتی": 1
@@ -96,13 +96,13 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 116,
+     "published": 117,
      "rejected": 0
     },
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 100,
+     "published": 102,
      "rejected": 0
     },
     "@newscenter": {
@@ -115,8 +115,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-09T11:21:40+00:00",
- "last_run": "2026-11-09T11:21:40+00:00",
+ "last_publish": "2026-11-09T11:26:41+00:00",
+ "last_run": "2026-11-09T11:26:41+00:00",
  "recent_rejected": [
   {
    "detail": "",
