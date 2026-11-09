@@ -80,7 +80,7 @@
   "2026-11-09": {
    "duplicates": 1,
    "failed": 0,
-   "published": 334,
+   "published": 336,
    "reasons": {
     "تبلیغات عمومی": 4,
     "دعوت تبلیغاتی": 1
@@ -102,21 +102,21 @@
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 116,
+     "published": 117,
      "rejected": 0
     },
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 52,
+     "published": 53,
      "rejected": 5
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-09T13:06:42+00:00",
- "last_run": "2026-11-09T13:06:42+00:00",
+ "last_publish": "2026-11-09T13:11:42+00:00",
+ "last_run": "2026-11-09T13:11:42+00:00",
  "recent_rejected": [
   {
    "detail": "",
