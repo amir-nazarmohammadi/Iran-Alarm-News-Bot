@@ -116,7 +116,7 @@
   "2026-11-10": {
    "duplicates": 0,
    "failed": 0,
-   "published": 22,
+   "published": 23,
    "reasons": {},
    "rejected": 0,
    "sources": {
@@ -135,7 +135,7 @@
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 10,
+     "published": 11,
      "rejected": 0
     },
     "@newscenter": {
@@ -148,8 +148,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-09T21:27:39+00:00",
- "last_run": "2026-11-09T21:27:39+00:00",
+ "last_publish": "2026-11-09T21:32:39+00:00",
+ "last_run": "2026-11-09T21:32:39+00:00",
  "recent_rejected": [
   {
    "detail": "",
