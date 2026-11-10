@@ -116,13 +116,14 @@
   "2026-11-10": {
    "duplicates": 1,
    "failed": 0,
-   "published": 251,
+   "published": 254,
    "reasons": {
+    "تبلیغات VPN و پروکسی": 1,
     "تبلیغات عمومی": 4,
     "دعوت تبلیغاتی": 1,
     "قمار و شرط‌بندی": 4
    },
-   "rejected": 9,
+   "rejected": 10,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
@@ -133,14 +134,14 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 108,
+     "published": 110,
      "rejected": 4
     },
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 73,
-     "rejected": 1
+     "published": 74,
+     "rejected": 2
     },
     "@newscenter": {
      "duplicates": 0,
@@ -152,16 +153,9 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-10T15:24:14+00:00",
- "last_run": "2026-11-10T15:24:14+00:00",
+ "last_publish": "2026-11-10T15:28:06+00:00",
+ "last_run": "2026-11-10T15:28:06+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "🔥🏆 یک گل جلو بیفت، برنده شو! ☑️ با قابلیت جدید «یک گل جلو» در بری بت، لازم نیست تا سوت پایان منتظر ب",
-   "source": "@newscenter",
-   "t": "2026-11-07T21:15:10+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -364,6 +358,13 @@
    "snippet": "🇺🇸〰️〰️ وزیر جنگ، پیت هگستث: این مصوبات، یک شوخی تلخ هستند. آن‌ها قانون اساسی را به تمسخر می‌گیرند، س",
    "source": "@Politicalnewschannell",
    "t": "2026-11-10T14:37:39+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات VPN و پروکسی",
+   "snippet": "🌟 • تنها‌ فیلترشکن نت‌ملی ایران! 💷 • هر ده گیگ 19,000 تومن 💴 • و صد گیگ 190 هزارتومن 👤 • آی‌پی ثابت ",
+   "source": "@km_ap",
+   "t": "2026-11-10T15:28:06+00:00"
   }
  ],
  "version": 1
