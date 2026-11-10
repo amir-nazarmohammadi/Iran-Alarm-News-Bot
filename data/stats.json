@@ -154,14 +154,16 @@
   "2026-11-11": {
    "duplicates": 0,
    "failed": 0,
-   "published": 18,
-   "reasons": {},
-   "rejected": 0,
+   "published": 21,
+   "reasons": {
+    "تبلیغات عمومی": 1
+   },
+   "rejected": 1,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
      "failed": 0,
-     "published": 3,
+     "published": 4,
      "rejected": 0
     },
     "@Politicalnewschannell": {
@@ -173,29 +175,22 @@
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 6,
+     "published": 7,
      "rejected": 0
     },
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 1,
-     "rejected": 0
+     "published": 2,
+     "rejected": 1
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-10T21:14:22+00:00",
- "last_run": "2026-11-10T21:14:22+00:00",
+ "last_publish": "2026-11-10T21:19:22+00:00",
+ "last_run": "2026-11-10T21:19:22+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "دعوت تبلیغاتی",
-   "snippet": "استاندار محترم کرمانشاه، جناب آقای دکتر حبیبی همه ما از اهداف و نیت امام جمعه محترم کرمانشاه آگاه هس",
-   "source": "@km_ap",
-   "t": "2026-11-08T05:00:34+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -398,6 +393,13 @@
    "snippet": "⭐️ بونوس خوش‌آمدگویی NBA در بری بت! 🏆 اولین شرط ترکیبی NBA خودت رو ثبت کن و شانست رو برای دریافت شرط",
    "source": "@newscenter",
    "t": "2026-11-10T19:59:15+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "😎 ۱۰۰,۰۰۰,۰۰۰ تومان! 🎁🫰 💰فقط با یک ثبت‌نام ساده در BerryBet می‌تونی وارد این آفر بشی! 💰 ✅ شرط رایگان",
+   "source": "@newscenter",
+   "t": "2026-11-10T21:19:16+00:00"
   }
  ],
  "version": 1
