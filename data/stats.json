@@ -116,25 +116,25 @@
   "2026-11-10": {
    "duplicates": 1,
    "failed": 0,
-   "published": 214,
+   "published": 216,
    "reasons": {
-    "تبلیغات عمومی": 3,
+    "تبلیغات عمومی": 4,
     "دعوت تبلیغاتی": 1,
     "قمار و شرط‌بندی": 4
    },
-   "rejected": 8,
+   "rejected": 9,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
-     "published": 28,
+     "published": 29,
      "rejected": 1
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 87,
-     "rejected": 3
+     "published": 88,
+     "rejected": 4
     },
     "@km_ap": {
      "duplicates": 0,
@@ -152,16 +152,9 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-10T14:33:51+00:00",
- "last_run": "2026-11-10T14:33:51+00:00",
+ "last_publish": "2026-11-10T14:39:43+00:00",
+ "last_run": "2026-11-10T14:39:43+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات VPN و پروکسی",
-   "snippet": "💢💢 گزارش ها از اختلال شدید اینترنت کانفیگ نت ملی از اینجا بخرید وصلن👇👇 🟢 🟢 @Politicalnewschannell",
-   "source": "@Politicalnewschannell",
-   "t": "2026-11-07T20:55:45+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -364,6 +357,13 @@
    "snippet": "⭐️ سایت بین المللی میخواید؟بری بت🎸 💯با بونوس خوش آمدگویی بری بت همین الان بدون ریسک پیشبینی کنید.🌳 📝",
    "source": "@newscenter",
    "t": "2026-11-10T14:02:39+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "🇺🇸〰️〰️ وزیر جنگ، پیت هگستث: این مصوبات، یک شوخی تلخ هستند. آن‌ها قانون اساسی را به تمسخر می‌گیرند، س",
+   "source": "@Politicalnewschannell",
+   "t": "2026-11-10T14:37:39+00:00"
   }
  ],
  "version": 1
