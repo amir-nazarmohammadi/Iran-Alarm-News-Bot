@@ -116,7 +116,7 @@
   "2026-11-10": {
    "duplicates": 0,
    "failed": 0,
-   "published": 129,
+   "published": 132,
    "reasons": {
     "تبلیغات عمومی": 1,
     "قمار و شرط‌بندی": 4
@@ -132,13 +132,13 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 38,
+     "published": 39,
      "rejected": 1
     },
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 49,
+     "published": 51,
      "rejected": 1
     },
     "@newscenter": {
@@ -151,8 +151,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-10T11:42:33+00:00",
- "last_run": "2026-11-10T11:42:33+00:00",
+ "last_publish": "2026-11-10T11:49:51+00:00",
+ "last_run": "2026-11-10T11:49:51+00:00",
  "recent_rejected": [
   {
    "detail": "",
