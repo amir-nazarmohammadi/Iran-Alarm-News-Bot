@@ -116,7 +116,7 @@
   "2026-11-10": {
    "duplicates": 1,
    "failed": 0,
-   "published": 175,
+   "published": 176,
    "reasons": {
     "تبلیغات عمومی": 2,
     "دعوت تبلیغاتی": 1,
@@ -145,15 +145,15 @@
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 32,
+     "published": 33,
      "rejected": 2
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-10T13:27:48+00:00",
- "last_run": "2026-11-10T13:27:48+00:00",
+ "last_publish": "2026-11-10T13:32:57+00:00",
+ "last_run": "2026-11-10T13:32:57+00:00",
  "recent_rejected": [
   {
    "detail": "",
