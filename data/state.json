@@ -1,9 +1,9 @@
 {
   "last_ids": {
     "@newscenter": 76705,
-    "@politicalnewschannell": 43921,
+    "@politicalnewschannell": 43922,
     "@km_ap": 235931,
-    "@iranianminds": 32287
+    "@iranianminds": 32296
   },
   "fingerprints": [
     "916380b5838adf6c974a48f6d4377cb8d1537f074301f92dcafb1cf73d3c015c",
@@ -4377,7 +4377,17 @@
     "e839b38e4ad2bd9618d1f166731f9c1ee07b0c0cf06ad8b393423a3a8ad9695b",
     "4166b75bd66e205abc6a6cc0082b69194329d027635298477dfb960446963755",
     "6c1c27f3d7c799bb7a7ae7faac43c9f9392daaffb34140b506cc95900aa642e5",
-    "95ee81844edb87d1b6e06b54ceaf94b994e89ddf0e1707c72f793280014f20e3"
+    "95ee81844edb87d1b6e06b54ceaf94b994e89ddf0e1707c72f793280014f20e3",
+    "fc3b029a960c74a145b3c6bfff64ebc4d8d19c7e3845a20655fae1c909beeb6a",
+    "ae159eec83ad3306c4cd5f191b9baa0fb7d09a9c89db24c9cddf986619bf88b8",
+    "db3f7eb085d058ec78f93158491377ffc4697f1232d2d5e68aed9d29238c6676",
+    "b53a02b30c46585cfb086b2b4ea38b86d4da58329ce15a05405bf98189c7e3ad",
+    "520a3d523c336a72d51a85ee104eb94ab694b97324fb3b5735c8870ebf27e2ea",
+    "cd3d7c501781cb9601d1a2f48040ee145317f666c26241d65deb238af633164e",
+    "bc569604d9a59b278a683dc5f5887f619cc1af7086b2efd21d266f6d353238fa",
+    "2dec842472d25f41ac07db64f94db0d7eb75f7169625e55c924630edb5dca064",
+    "e6b8f63dfddd1445899f8da14b98ee4ccd3b568b0f4566b3a3b11750639481f6",
+    "fbc7a7cf08bff2e15eaef9293d0af117769f8726d9851e9e033023611f5527e9"
   ],
   "entities": {
     "@newscenter": {
@@ -4397,9 +4407,7 @@
       "hash": -1729392782433262396
     }
   },
-  "attempts": {
-    "@iranianminds:32288": 1
-  },
+  "attempts": {},
   "alerts": {},
   "paused": false
 }
