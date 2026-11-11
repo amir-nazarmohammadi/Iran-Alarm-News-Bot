@@ -154,50 +154,43 @@
   "2026-11-11": {
    "duplicates": 2,
    "failed": 0,
-   "published": 170,
+   "published": 197,
    "reasons": {
-    "تبلیغات عمومی": 4
+    "تبلیغات عمومی": 5
    },
-   "rejected": 4,
+   "rejected": 5,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
      "failed": 0,
-     "published": 21,
+     "published": 23,
      "rejected": 0
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 59,
-     "rejected": 0
+     "published": 68,
+     "rejected": 1
     },
     "@km_ap": {
      "duplicates": 2,
      "failed": 0,
-     "published": 64,
+     "published": 74,
      "rejected": 1
     },
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 26,
+     "published": 32,
      "rejected": 3
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-11T11:38:37+00:00",
- "last_run": "2026-11-11T11:38:37+00:00",
+ "last_publish": "2026-11-11T14:13:23+00:00",
+ "last_run": "2026-11-11T14:13:23+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "🔥🏆 یک گل جلو بیفت، برنده شو! ☑️ با قابلیت جدید «یک گل جلو» در بری بت، لازم نیست تا سوت پایان منتظر ب",
-   "source": "@newscenter",
-   "t": "2026-11-08T15:15:43+00:00"
-  },
   {
    "detail": "",
    "reason": "قمار و شرط‌بندی",
@@ -400,6 +393,13 @@
    "snippet": "توجه افکار عمومی و رسانه‌های منطقه اورامانات پس از دفاع امام جمعه محترم شهرستان جوانرود از امام جمعه",
    "source": "@km_ap",
    "t": "2026-11-11T07:13:02+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "💢🇨🇳🚗یک دانشگاه چینی که به ارتش آزادی‌بخش خلق چین (PLA) وابسته است و در فهرست تحریم‌ها قرار دارد، ترا",
+   "source": "@Politicalnewschannell",
+   "t": "2026-11-11T14:12:37+00:00"
   }
  ],
  "version": 1
