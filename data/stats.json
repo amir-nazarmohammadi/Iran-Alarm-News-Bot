@@ -156,9 +156,9 @@
    "failed": 0,
    "published": 236,
    "reasons": {
-    "تبلیغات عمومی": 6
+    "تبلیغات عمومی": 7
    },
-   "rejected": 6,
+   "rejected": 7,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -182,22 +182,15 @@
      "duplicates": 0,
      "failed": 0,
      "published": 36,
-     "rejected": 4
+     "rejected": 5
     }
    }
   }
  },
  "errors": [],
  "last_publish": "2026-11-11T15:35:28+00:00",
- "last_run": "2026-11-11T15:35:28+00:00",
+ "last_run": "2026-11-11T15:40:03+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "لینک دعوت",
-   "snippet": "🚨 لیست کامل استان های تعطیل شده مشخص شد👇 https://t.me/+3Yulmui1gikwYmM0",
-   "source": "@newscenter",
-   "t": "2026-11-08T18:35:50+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات VPN و پروکسی",
@@ -400,6 +393,13 @@
    "snippet": "⭐️ بونوس خوش‌آمدگویی NBA در بری بت! 🏆 اولین شرط ترکیبی NBA خودت رو ثبت کن و شانست رو برای دریافت شرط",
    "source": "@newscenter",
    "t": "2026-11-11T14:35:01+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "🏆بری‌بت ✔️دو شرط رایگان در روز⭐️ 🇪🇺برای پیشبینی بسکتبال، تنیس و والیبال⭐️ 🥳بر روی بازی‌های ورزش مورد",
+   "source": "@newscenter",
+   "t": "2026-11-11T15:40:03+00:00"
   }
  ],
  "version": 1
