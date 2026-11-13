@@ -227,25 +227,25 @@
   "2026-11-13": {
    "duplicates": 5,
    "failed": 0,
-   "published": 250,
+   "published": 251,
    "reasons": {
     "تبلیغات VPN و پروکسی": 1,
-    "تبلیغات عمومی": 4,
+    "تبلیغات عمومی": 5,
     "قمار و شرط‌بندی": 2
    },
-   "rejected": 7,
+   "rejected": 8,
    "sources": {
     "@IranianMinds": {
      "duplicates": 3,
      "failed": 0,
-     "published": 34,
+     "published": 35,
      "rejected": 0
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
      "published": 75,
-     "rejected": 2
+     "rejected": 3
     },
     "@km_ap": {
      "duplicates": 2,
@@ -263,16 +263,9 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-13T14:57:27+00:00",
- "last_run": "2026-11-13T14:57:27+00:00",
+ "last_publish": "2026-11-13T14:58:30+00:00",
+ "last_run": "2026-11-13T14:58:30+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "⭐️ بونوس خوش‌آمدگویی NBA در بری بت! 🏆 اولین شرط ترکیبی NBA خودت رو ثبت کن و شانست رو برای دریافت شرط",
-   "source": "@newscenter",
-   "t": "2026-11-10T15:47:46+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -475,6 +468,13 @@
    "snippet": "احتمال حمله گسترده امریکا به ایران تا آخر سال 2026 در سایت شرط بندی پلی مارکت به ۹ درصد کاهش یافت @k",
    "source": "@km_ap",
    "t": "2026-11-13T09:12:49+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "💢🇩🇪 کمیته بودجه بوندستاگ آلمان، بودجه مربوط به طرح دفاعی سال ۲۰۲۷ را برای خرید ۱۶ فروند هواپیمای ترا",
+   "source": "@Politicalnewschannell",
+   "t": "2026-11-13T14:58:29+00:00"
   }
  ],
  "version": 1
