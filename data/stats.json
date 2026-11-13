@@ -227,13 +227,13 @@
   "2026-11-13": {
    "duplicates": 5,
    "failed": 0,
-   "published": 257,
+   "published": 259,
    "reasons": {
     "تبلیغات VPN و پروکسی": 1,
-    "تبلیغات عمومی": 5,
+    "تبلیغات عمومی": 6,
     "قمار و شرط‌بندی": 2
    },
-   "rejected": 8,
+   "rejected": 9,
    "sources": {
     "@IranianMinds": {
      "duplicates": 3,
@@ -250,29 +250,22 @@
     "@km_ap": {
      "duplicates": 2,
      "failed": 0,
-     "published": 101,
+     "published": 102,
      "rejected": 2
     },
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 41,
-     "rejected": 3
+     "published": 42,
+     "rejected": 4
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-13T15:13:41+00:00",
- "last_run": "2026-11-13T15:13:41+00:00",
+ "last_publish": "2026-11-13T15:18:32+00:00",
+ "last_run": "2026-11-13T15:18:32+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "⭐️ بونوس خوش‌آمدگویی NBA در بری بت! 🏆 اولین شرط ترکیبی NBA خودت رو ثبت کن و شانست رو برای دریافت شرط",
-   "source": "@newscenter",
-   "t": "2026-11-10T19:59:15+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -475,6 +468,13 @@
    "snippet": "💢🇩🇪 کمیته بودجه بوندستاگ آلمان، بودجه مربوط به طرح دفاعی سال ۲۰۲۷ را برای خرید ۱۶ فروند هواپیمای ترا",
    "source": "@Politicalnewschannell",
    "t": "2026-11-13T14:58:29+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "⚡ بری بت | BerryBet 🔥 مسابقات امروز 👍 ⚽️ صربستان - آلمان 🌎 ساعت ۲۳:۱۵ ⚽️ هلند - یونان 🌎 ساعت ۲۳:۱۵ ﻿",
+   "source": "@newscenter",
+   "t": "2026-11-13T15:18:30+00:00"
   }
  ],
  "version": 1
