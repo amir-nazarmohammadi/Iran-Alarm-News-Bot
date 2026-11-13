@@ -227,13 +227,14 @@
   "2026-11-13": {
    "duplicates": 10,
    "failed": 0,
-   "published": 374,
+   "published": 376,
    "reasons": {
     "تبلیغات VPN و پروکسی": 2,
     "تبلیغات عمومی": 6,
-    "قمار و شرط‌بندی": 2
+    "قمار و شرط‌بندی": 2,
+    "لینک دعوت": 1
    },
-   "rejected": 10,
+   "rejected": 11,
    "sources": {
     "@IranianMinds": {
      "duplicates": 4,
@@ -244,7 +245,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 128,
+     "published": 129,
      "rejected": 3
     },
     "@km_ap": {
@@ -256,23 +257,16 @@
     "@newscenter": {
      "duplicates": 3,
      "failed": 0,
-     "published": 66,
-     "rejected": 5
+     "published": 67,
+     "rejected": 6
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-13T18:58:50+00:00",
- "last_run": "2026-11-13T18:58:50+00:00",
+ "last_publish": "2026-11-13T19:03:53+00:00",
+ "last_run": "2026-11-13T19:03:53+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "😎 ۱۰۰,۰۰۰,۰۰۰ تومان! 🎁🫰 💰فقط با یک ثبت‌نام ساده در BerryBet می‌تونی وارد این آفر بشی! 💰 ✅ شرط رایگان",
-   "source": "@newscenter",
-   "t": "2026-11-10T23:09:21+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -475,6 +469,13 @@
    "snippet": "🚫 به علت جنگ ممکنه نت‌ها ملی بشه، جوین بشید فیلترشکن وصل شید ،اتصالتون قطع نشه، جدی بگیرید 🔴⬇️ • @VP",
    "source": "@newscenter",
    "t": "2026-11-13T18:53:48+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "لینک دعوت",
+   "snippet": "🚨 مدارس و‌ دانشگاه ها مجازی شد؟؟ اینجا ببینید👇 https://t.me/+KFYxupjdsSxkNTE0",
+   "source": "@newscenter",
+   "t": "2026-11-13T19:03:53+00:00"
   }
  ],
  "version": 1
