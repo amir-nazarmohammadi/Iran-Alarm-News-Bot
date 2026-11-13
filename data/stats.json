@@ -227,14 +227,14 @@
   "2026-11-13": {
    "duplicates": 11,
    "failed": 0,
-   "published": 383,
+   "published": 386,
    "reasons": {
     "تبلیغات VPN و پروکسی": 2,
-    "تبلیغات عمومی": 6,
+    "تبلیغات عمومی": 7,
     "قمار و شرط‌بندی": 2,
     "لینک دعوت": 1
    },
-   "rejected": 11,
+   "rejected": 12,
    "sources": {
     "@IranianMinds": {
      "duplicates": 4,
@@ -257,23 +257,16 @@
     "@newscenter": {
      "duplicates": 4,
      "failed": 0,
-     "published": 69,
-     "rejected": 6
+     "published": 72,
+     "rejected": 7
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-13T19:13:52+00:00",
- "last_run": "2026-11-13T19:13:52+00:00",
+ "last_publish": "2026-11-13T19:18:52+00:00",
+ "last_run": "2026-11-13T19:18:52+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "⭐️ بونوس خوش‌آمدگویی NBA در بری بت! 🏆 اولین شرط ترکیبی NBA خودت رو ثبت کن و شانست رو برای دریافت شرط",
-   "source": "@newscenter",
-   "t": "2026-11-11T06:12:52+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -476,6 +469,13 @@
    "snippet": "🚨 مدارس و‌ دانشگاه ها مجازی شد؟؟ اینجا ببینید👇 https://t.me/+KFYxupjdsSxkNTE0",
    "source": "@newscenter",
    "t": "2026-11-13T19:03:53+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "⚡ بری بت | BerryBet 🔥 مسابقات امروز 👍 ⚽️ صربستان - آلمان 🌎 ساعت ۲۳:۱۵ ⚽️ هلند - یونان 🌎 ساعت ۲۳:۱۵ ﻿",
+   "source": "@newscenter",
+   "t": "2026-11-13T19:18:49+00:00"
   }
  ],
  "version": 1
