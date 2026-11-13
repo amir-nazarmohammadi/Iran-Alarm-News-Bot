@@ -227,7 +227,7 @@
   "2026-11-13": {
    "duplicates": 0,
    "failed": 0,
-   "published": 94,
+   "published": 96,
    "reasons": {
     "تبلیغات VPN و پروکسی": 1,
     "تبلیغات عمومی": 3
@@ -237,7 +237,7 @@
     "@IranianMinds": {
      "duplicates": 0,
      "failed": 0,
-     "published": 7,
+     "published": 9,
      "rejected": 0
     },
     "@Politicalnewschannell": {
@@ -262,8 +262,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-13T06:57:54+00:00",
- "last_run": "2026-11-13T06:57:54+00:00",
+ "last_publish": "2026-11-13T07:02:45+00:00",
+ "last_run": "2026-11-13T07:02:45+00:00",
  "recent_rejected": [
   {
    "detail": "",
