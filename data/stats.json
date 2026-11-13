@@ -227,7 +227,7 @@
   "2026-11-13": {
    "duplicates": 12,
    "failed": 0,
-   "published": 400,
+   "published": 401,
    "reasons": {
     "تبلیغات VPN و پروکسی": 2,
     "تبلیغات عمومی": 7,
@@ -246,7 +246,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 136,
+     "published": 137,
      "rejected": 3
     },
     "@km_ap": {
@@ -265,8 +265,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-13T19:43:52+00:00",
- "last_run": "2026-11-13T19:43:52+00:00",
+ "last_publish": "2026-11-13T19:49:32+00:00",
+ "last_run": "2026-11-13T19:49:32+00:00",
  "recent_rejected": [
   {
    "detail": "",
