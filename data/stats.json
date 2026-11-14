@@ -266,7 +266,7 @@
   "2026-11-14": {
    "duplicates": 5,
    "failed": 0,
-   "published": 222,
+   "published": 223,
    "reasons": {
     "تبلیغات عمومی": 2
    },
@@ -281,7 +281,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 67,
+     "published": 68,
      "rejected": 0
     },
     "@km_ap": {
@@ -300,8 +300,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-14T12:30:17+00:00",
- "last_run": "2026-11-14T12:30:17+00:00",
+ "last_publish": "2026-11-14T12:35:10+00:00",
+ "last_run": "2026-11-14T12:35:10+00:00",
  "recent_rejected": [
   {
    "detail": "",
