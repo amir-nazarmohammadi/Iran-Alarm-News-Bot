@@ -266,7 +266,7 @@
   "2026-11-14": {
    "duplicates": 5,
    "failed": 0,
-   "published": 198,
+   "published": 201,
    "reasons": {
     "تبلیغات عمومی": 2
    },
@@ -287,21 +287,21 @@
     "@km_ap": {
      "duplicates": 4,
      "failed": 0,
-     "published": 92,
+     "published": 94,
      "rejected": 0
     },
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 35,
+     "published": 36,
      "rejected": 2
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-14T11:40:07+00:00",
- "last_run": "2026-11-14T11:40:07+00:00",
+ "last_publish": "2026-11-14T11:45:06+00:00",
+ "last_run": "2026-11-14T11:45:06+00:00",
  "recent_rejected": [
   {
    "detail": "",
