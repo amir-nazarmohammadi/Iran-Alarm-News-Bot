@@ -266,13 +266,13 @@
   "2026-11-14": {
    "duplicates": 5,
    "failed": 0,
-   "published": 400,
+   "published": 404,
    "reasons": {
     "تبلیغات عمومی": 7,
-    "قمار و شرط‌بندی": 1,
+    "قمار و شرط‌بندی": 2,
     "لینک دعوت": 1
    },
-   "rejected": 9,
+   "rejected": 10,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -283,35 +283,28 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 130,
+     "published": 131,
      "rejected": 0
     },
     "@km_ap": {
      "duplicates": 4,
      "failed": 0,
-     "published": 155,
+     "published": 157,
      "rejected": 3
     },
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 78,
-     "rejected": 6
+     "published": 79,
+     "rejected": 7
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-14T19:55:40+00:00",
- "last_run": "2026-11-14T19:55:40+00:00",
+ "last_publish": "2026-11-14T20:03:08+00:00",
+ "last_run": "2026-11-14T20:03:08+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "ارتش اسرائیل در حال مذاکره مستقیم با بنیاد صنایع آینده، یک استارت‌آپ آمریکایی، برای خرید حداکثر ۱۰۰۰",
-   "source": "@km_ap",
-   "t": "2026-11-12T11:51:31+00:00"
-  },
   {
    "detail": "",
    "reason": "قمار و شرط‌بندی",
@@ -514,6 +507,13 @@
    "snippet": "لیست کامل استان های تعطیل شده مشخص شد👇 https://t.me/+Nvtb_ch1nuo5ZGI0",
    "source": "@newscenter",
    "t": "2026-11-14T19:55:38+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "قمار و شرط‌بندی",
+   "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️چرا این دیدار حساس را در ری",
+   "source": "@newscenter",
+   "t": "2026-11-14T20:00:39+00:00"
   }
  ],
  "version": 1
