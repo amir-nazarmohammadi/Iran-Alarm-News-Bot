@@ -266,7 +266,7 @@
   "2026-11-14": {
    "duplicates": 5,
    "failed": 0,
-   "published": 291,
+   "published": 294,
    "reasons": {
     "تبلیغات عمومی": 5
    },
@@ -281,7 +281,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 97,
+     "published": 98,
      "rejected": 0
     },
     "@km_ap": {
@@ -293,15 +293,15 @@
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 53,
+     "published": 55,
      "rejected": 3
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-14T16:15:54+00:00",
- "last_run": "2026-11-14T16:15:54+00:00",
+ "last_publish": "2026-11-14T16:20:56+00:00",
+ "last_run": "2026-11-14T16:20:56+00:00",
  "recent_rejected": [
   {
    "detail": "",
