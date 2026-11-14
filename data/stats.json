@@ -266,11 +266,11 @@
   "2026-11-14": {
    "duplicates": 5,
    "failed": 0,
-   "published": 308,
+   "published": 310,
    "reasons": {
-    "تبلیغات عمومی": 5
+    "تبلیغات عمومی": 6
    },
-   "rejected": 5,
+   "rejected": 6,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -281,14 +281,14 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 103,
+     "published": 104,
      "rejected": 0
     },
     "@km_ap": {
      "duplicates": 4,
      "failed": 0,
-     "published": 120,
-     "rejected": 2
+     "published": 121,
+     "rejected": 3
     },
     "@newscenter": {
      "duplicates": 1,
@@ -300,16 +300,9 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-14T16:41:46+00:00",
- "last_run": "2026-11-14T16:41:46+00:00",
+ "last_publish": "2026-11-14T16:45:50+00:00",
+ "last_run": "2026-11-14T16:45:50+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "دعوت تبلیغاتی",
-   "snippet": "🔴 رویترز: عاباس عراقچی، وزیر امور خارجه ج.ا، از سازمان ملل و آژانس بین‌المللی انرژی اتمی خواست جایزه",
-   "source": "@IranianMinds",
-   "t": "2026-11-12T06:26:51+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -512,6 +505,13 @@
    "snippet": "در ژاپن، بسته‌بندی محصولات نباید مصرف‌ کننده را درباره مقدار، اندازه یا ویژگی واقعی محصول گمراه کند؛",
    "source": "@km_ap",
    "t": "2026-11-14T15:46:30+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "خطوط تلفن سازمانی ۴ و ۵ رقمی نکسفون راهکاری برای حرفه‌ای‌تر شدن ارتباط تلفنی کسب‌وکارها هستند: 🔢 شما",
+   "source": "@km_ap",
+   "t": "2026-11-14T16:45:50+00:00"
   }
  ],
  "version": 1
