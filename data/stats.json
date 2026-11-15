@@ -303,16 +303,17 @@
   "2026-11-15": {
    "duplicates": 1,
    "failed": 0,
-   "published": 75,
+   "published": 77,
    "reasons": {
-    "تبلیغات عمومی": 2
+    "تبلیغات عمومی": 2,
+    "قمار و شرط‌بندی": 1
    },
-   "rejected": 2,
+   "rejected": 3,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
      "failed": 0,
-     "published": 13,
+     "published": 14,
      "rejected": 0
     },
     "@Politicalnewschannell": {
@@ -330,23 +331,16 @@
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 24,
-     "rejected": 2
+     "published": 25,
+     "rejected": 3
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-15T06:26:12+00:00",
- "last_run": "2026-11-15T06:26:12+00:00",
+ "last_publish": "2026-11-15T06:36:17+00:00",
+ "last_run": "2026-11-15T06:36:17+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "😎 ۱۰۰,۰۰۰,۰۰۰ تومان! 🎁🫰 💰فقط با یک ثبت‌نام ساده در BerryBet می‌تونی وارد این آفر بشی! 💰 ✅ شرط رایگان",
-   "source": "@newscenter",
-   "t": "2026-11-12T20:04:56+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات VPN و پروکسی",
@@ -549,6 +543,13 @@
    "snippet": "👏یک بار شارژ کن ، دوبار شارژشو‌ این طرح اختصاصی ریتزوبت برای کاربرای فارسی زبان خودش رو از دست نده 🔵",
    "source": "@newscenter",
    "t": "2026-11-14T22:25:41+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "قمار و شرط‌بندی",
+   "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️فینالی که در نیویورک منتظرش",
+   "source": "@newscenter",
+   "t": "2026-11-15T06:36:12+00:00"
   }
  ],
  "version": 1
