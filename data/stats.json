@@ -303,7 +303,7 @@
   "2026-11-15": {
    "duplicates": 5,
    "failed": 0,
-   "published": 226,
+   "published": 229,
    "reasons": {
     "تبلیغات عمومی": 2,
     "قمار و شرط‌بندی": 1
@@ -325,7 +325,7 @@
     "@km_ap": {
      "duplicates": 3,
      "failed": 0,
-     "published": 63,
+     "published": 66,
      "rejected": 0
     },
     "@newscenter": {
@@ -338,8 +338,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-15T13:36:20+00:00",
- "last_run": "2026-11-15T13:36:20+00:00",
+ "last_publish": "2026-11-15T13:41:19+00:00",
+ "last_run": "2026-11-15T13:41:19+00:00",
  "recent_rejected": [
   {
    "detail": "",
