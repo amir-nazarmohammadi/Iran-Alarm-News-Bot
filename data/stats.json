@@ -340,9 +340,11 @@
   "2026-11-16": {
    "duplicates": 0,
    "failed": 0,
-   "published": 21,
-   "reasons": {},
-   "rejected": 0,
+   "published": 24,
+   "reasons": {
+    "تبلیغات عمومی": 1
+   },
+   "rejected": 1,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -353,7 +355,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 7,
+     "published": 9,
      "rejected": 0
     },
     "@km_ap": {
@@ -365,23 +367,16 @@
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 3,
-     "rejected": 0
+     "published": 4,
+     "rejected": 1
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-15T21:10:26+00:00",
- "last_run": "2026-11-15T21:10:26+00:00",
+ "last_publish": "2026-11-15T21:15:40+00:00",
+ "last_run": "2026-11-15T21:15:40+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "‌کیفرخواست ۶ متهم پرونده نمایشگاه فیتکس صادر شد 🔹درپی انتشار تصاویر رفتار‌های خلاف عرف و قانون در «ن",
-   "source": "@km_ap",
-   "t": "2026-11-13T09:07:50+00:00"
-  },
   {
    "detail": "",
    "reason": "قمار و شرط‌بندی",
@@ -584,6 +579,13 @@
    "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️فینالی که در نیویورک منتظرش",
    "source": "@newscenter",
    "t": "2026-11-15T20:10:00+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "👏یک بار شارژ کن ، دوبار شارژشو‌ این طرح اختصاصی ریتزوبت برای کاربرای فارسی زبان خودش رو از دست نده 🔵",
+   "source": "@newscenter",
+   "t": "2026-11-15T21:15:03+00:00"
   }
  ],
  "version": 1
