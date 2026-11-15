@@ -303,7 +303,7 @@
   "2026-11-15": {
    "duplicates": 5,
    "failed": 0,
-   "published": 292,
+   "published": 293,
    "reasons": {
     "تبلیغات عمومی": 3,
     "قمار و شرط‌بندی": 3
@@ -313,7 +313,7 @@
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
-     "published": 42,
+     "published": 43,
      "rejected": 0
     },
     "@Politicalnewschannell": {
@@ -338,8 +338,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-15T16:39:52+00:00",
- "last_run": "2026-11-15T16:39:52+00:00",
+ "last_publish": "2026-11-15T16:44:57+00:00",
+ "last_run": "2026-11-15T16:44:57+00:00",
  "recent_rejected": [
   {
    "detail": "",
