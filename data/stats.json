@@ -303,51 +303,44 @@
   "2026-11-15": {
    "duplicates": 5,
    "failed": 0,
-   "published": 243,
+   "published": 250,
    "reasons": {
-    "تبلیغات عمومی": 2,
+    "تبلیغات عمومی": 3,
     "قمار و شرط‌بندی": 2
    },
-   "rejected": 4,
+   "rejected": 5,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
-     "published": 35,
+     "published": 36,
      "rejected": 0
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 83,
-     "rejected": 0
+     "published": 87,
+     "rejected": 1
     },
     "@km_ap": {
      "duplicates": 3,
      "failed": 0,
-     "published": 71,
+     "published": 72,
      "rejected": 0
     },
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 54,
+     "published": 55,
      "rejected": 4
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-15T14:21:19+00:00",
- "last_run": "2026-11-15T14:21:19+00:00",
+ "last_publish": "2026-11-15T14:44:57+00:00",
+ "last_run": "2026-11-15T14:44:57+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "🔥🏆 یک گل جلو بیفت، برنده شو! ☑️ با قابلیت جدید «یک گل جلو» در بری بت، لازم نیست تا سوت پایان منتظر ب",
-   "source": "@newscenter",
-   "t": "2026-11-12T21:20:01+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -550,6 +543,13 @@
    "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️فینالی که در نیویورک منتظرش",
    "source": "@newscenter",
    "t": "2026-11-15T13:56:16+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "تخفیف ویژه خریداری کنید✅✅",
+   "source": "@Politicalnewschannell",
+   "t": "2026-11-15T14:44:56+00:00"
   }
  ],
  "version": 1
