@@ -303,12 +303,12 @@
   "2026-11-15": {
    "duplicates": 5,
    "failed": 0,
-   "published": 230,
+   "published": 235,
    "reasons": {
     "تبلیغات عمومی": 2,
-    "قمار و شرط‌بندی": 1
+    "قمار و شرط‌بندی": 2
    },
-   "rejected": 3,
+   "rejected": 4,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
@@ -319,35 +319,28 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 79,
+     "published": 81,
      "rejected": 0
     },
     "@km_ap": {
      "duplicates": 3,
      "failed": 0,
-     "published": 66,
+     "published": 68,
      "rejected": 0
     },
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 51,
-     "rejected": 3
+     "published": 52,
+     "rejected": 4
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-15T13:51:20+00:00",
- "last_run": "2026-11-15T13:51:20+00:00",
+ "last_publish": "2026-11-15T13:56:20+00:00",
+ "last_run": "2026-11-15T13:56:20+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات VPN و پروکسی",
-   "snippet": "💢💢 گزارش ها از اختلال شدید اینترنت کانفیگ نت ملی از اینجا بخرید وصلن👇👇 🟢 🟢 @Politicalnewschannell",
-   "source": "@Politicalnewschannell",
-   "t": "2026-11-12T20:44:57+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -550,6 +543,13 @@
    "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️فینالی که در نیویورک منتظرش",
    "source": "@newscenter",
    "t": "2026-11-15T06:36:12+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "قمار و شرط‌بندی",
+   "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️فینالی که در نیویورک منتظرش",
+   "source": "@newscenter",
+   "t": "2026-11-15T13:56:16+00:00"
   }
  ],
  "version": 1
