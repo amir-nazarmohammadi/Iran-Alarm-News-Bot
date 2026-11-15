@@ -301,15 +301,15 @@
    }
   },
   "2026-11-15": {
-   "duplicates": 7,
+   "duplicates": 8,
    "failed": 0,
-   "published": 377,
+   "published": 383,
    "reasons": {
     "تبلیغات عمومی": 3,
-    "قمار و شرط‌بندی": 3,
+    "قمار و شرط‌بندی": 4,
     "لینک دعوت": 1
    },
-   "rejected": 7,
+   "rejected": 8,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
@@ -320,35 +320,28 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 141,
+     "published": 143,
      "rejected": 1
     },
     "@km_ap": {
-     "duplicates": 3,
+     "duplicates": 4,
      "failed": 0,
-     "published": 108,
+     "published": 109,
      "rejected": 1
     },
     "@newscenter": {
      "duplicates": 3,
      "failed": 0,
-     "published": 76,
-     "rejected": 5
+     "published": 79,
+     "rejected": 6
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-15T20:05:01+00:00",
- "last_run": "2026-11-15T20:05:01+00:00",
+ "last_publish": "2026-11-15T20:10:03+00:00",
+ "last_run": "2026-11-15T20:10:03+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "قمار و شرط‌بندی",
-   "snippet": "🇺🇸🇮🇱🇮🇷احتمال حمله گسترده امریکا به ایران تا آخر سال میلادی در سایت شرط بندی پلی مارکت به ۹ درصد کاهش",
-   "source": "@Politicalnewschannell",
-   "t": "2026-11-13T08:37:47+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -551,6 +544,13 @@
    "snippet": "⚠️قوی ‌ترین محصول گیاهی و دائمی رفع مشکلات آقایان \"محصول اورجینال هاندل‌گاردن روسیه\" 🔹️ یکبار برای ه",
    "source": "@km_ap",
    "t": "2026-11-15T17:54:58+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "قمار و شرط‌بندی",
+   "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️فینالی که در نیویورک منتظرش",
+   "source": "@newscenter",
+   "t": "2026-11-15T20:10:00+00:00"
   }
  ],
  "version": 1
