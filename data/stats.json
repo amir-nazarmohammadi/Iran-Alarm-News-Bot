@@ -303,7 +303,7 @@
   "2026-11-15": {
    "duplicates": 1,
    "failed": 0,
-   "published": 51,
+   "published": 52,
    "reasons": {
     "تبلیغات عمومی": 2
    },
@@ -330,15 +330,15 @@
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 21,
+     "published": 22,
      "rejected": 2
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-15T03:41:01+00:00",
- "last_run": "2026-11-15T04:15:57+00:00",
+ "last_publish": "2026-11-15T04:33:43+00:00",
+ "last_run": "2026-11-15T04:33:43+00:00",
  "recent_rejected": [
   {
    "detail": "",
