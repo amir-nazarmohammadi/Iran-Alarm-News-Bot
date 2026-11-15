@@ -301,9 +301,9 @@
    }
   },
   "2026-11-15": {
-   "duplicates": 2,
+   "duplicates": 3,
    "failed": 0,
-   "published": 133,
+   "published": 137,
    "reasons": {
     "تبلیغات عمومی": 2,
     "قمار و شرط‌بندی": 1
@@ -313,33 +313,33 @@
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
-     "published": 17,
+     "published": 18,
      "rejected": 0
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 43,
+     "published": 44,
      "rejected": 0
     },
     "@km_ap": {
-     "duplicates": 0,
+     "duplicates": 1,
      "failed": 0,
-     "published": 39,
+     "published": 40,
      "rejected": 0
     },
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 34,
+     "published": 35,
      "rejected": 3
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-15T08:51:13+00:00",
- "last_run": "2026-11-15T08:51:13+00:00",
+ "last_publish": "2026-11-15T08:56:16+00:00",
+ "last_run": "2026-11-15T08:56:16+00:00",
  "recent_rejected": [
   {
    "detail": "",
