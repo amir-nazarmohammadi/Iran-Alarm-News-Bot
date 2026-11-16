@@ -338,7 +338,7 @@
    }
   },
   "2026-11-16": {
-   "duplicates": 0,
+   "duplicates": 1,
    "failed": 0,
    "published": 74,
    "reasons": {
@@ -348,7 +348,7 @@
    "rejected": 3,
    "sources": {
     "@IranianMinds": {
-     "duplicates": 0,
+     "duplicates": 1,
      "failed": 0,
      "published": 10,
      "rejected": 1
@@ -376,7 +376,7 @@
  },
  "errors": [],
  "last_publish": "2026-11-16T05:05:25+00:00",
- "last_run": "2026-11-16T05:05:25+00:00",
+ "last_run": "2026-11-16T05:20:27+00:00",
  "recent_rejected": [
   {
    "detail": "",
