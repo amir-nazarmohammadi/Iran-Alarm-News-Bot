@@ -340,7 +340,7 @@
   "2026-11-16": {
    "duplicates": 0,
    "failed": 0,
-   "published": 73,
+   "published": 74,
    "reasons": {
     "تبلیغات عمومی": 2,
     "لینک دعوت": 1
@@ -368,15 +368,15 @@
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 16,
+     "published": 17,
      "rejected": 2
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-16T05:00:28+00:00",
- "last_run": "2026-11-16T05:00:28+00:00",
+ "last_publish": "2026-11-16T05:05:25+00:00",
+ "last_run": "2026-11-16T05:05:25+00:00",
  "recent_rejected": [
   {
    "detail": "",
