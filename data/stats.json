@@ -378,11 +378,11 @@
   "2026-11-17": {
    "duplicates": 0,
    "failed": 0,
-   "published": 15,
+   "published": 18,
    "reasons": {
-    "تبلیغات عمومی": 1
+    "تبلیغات عمومی": 2
    },
-   "rejected": 1,
+   "rejected": 2,
    "sources": {
     "@Politicalnewschannell": {
      "duplicates": 0,
@@ -393,29 +393,22 @@
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 4,
+     "published": 6,
      "rejected": 1
     },
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 4,
-     "rejected": 0
+     "published": 5,
+     "rejected": 1
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-16T21:11:04+00:00",
- "last_run": "2026-11-16T21:11:04+00:00",
+ "last_publish": "2026-11-16T21:16:19+00:00",
+ "last_run": "2026-11-16T21:16:19+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "قمار و شرط‌بندی",
-   "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️چرا این دیدار حساس را در ری",
-   "source": "@newscenter",
-   "t": "2026-11-14T17:15:28+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -618,6 +611,13 @@
    "snippet": "آقایان مسئول! سخنان امام جمعه کرمانشاه درباره رسانه‌ها را فراموش کرده‌اید؟ امروز شاهد وضعیتی هستیم ک",
    "source": "@km_ap",
    "t": "2026-11-16T21:00:49+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "👏یک بار شارژ کن ، دوبار شارژشو‌ این طرح اختصاصی ریتزوبت برای کاربرای فارسی زبان خودش رو از دست نده 🔵",
+   "source": "@newscenter",
+   "t": "2026-11-16T21:15:49+00:00"
   }
  ],
  "version": 1
