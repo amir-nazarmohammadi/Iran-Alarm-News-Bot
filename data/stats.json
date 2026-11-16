@@ -340,7 +340,7 @@
   "2026-11-16": {
    "duplicates": 1,
    "failed": 0,
-   "published": 74,
+   "published": 75,
    "reasons": {
     "تبلیغات عمومی": 2,
     "لینک دعوت": 1
@@ -350,7 +350,7 @@
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
-     "published": 10,
+     "published": 11,
      "rejected": 1
     },
     "@Politicalnewschannell": {
@@ -375,8 +375,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-16T05:05:25+00:00",
- "last_run": "2026-11-16T05:20:27+00:00",
+ "last_publish": "2026-11-16T05:25:28+00:00",
+ "last_run": "2026-11-16T05:25:28+00:00",
  "recent_rejected": [
   {
    "detail": "",
