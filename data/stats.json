@@ -378,12 +378,12 @@
   "2026-11-17": {
    "duplicates": 8,
    "failed": 0,
-   "published": 375,
+   "published": 378,
    "reasons": {
-    "تبلیغات عمومی": 7,
+    "تبلیغات عمومی": 8,
     "دعوت تبلیغاتی": 1
    },
-   "rejected": 8,
+   "rejected": 9,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
@@ -394,35 +394,28 @@
     "@Politicalnewschannell": {
      "duplicates": 1,
      "failed": 0,
-     "published": 152,
+     "published": 153,
      "rejected": 1
     },
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 117,
+     "published": 118,
      "rejected": 4
     },
     "@newscenter": {
      "duplicates": 5,
      "failed": 0,
-     "published": 71,
-     "rejected": 3
+     "published": 72,
+     "rejected": 4
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-17T19:52:19+00:00",
- "last_run": "2026-11-17T19:52:19+00:00",
+ "last_publish": "2026-11-17T19:57:18+00:00",
+ "last_run": "2026-11-17T19:57:18+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "قمار و شرط‌بندی",
-   "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️فینالی که در نیویورک منتظرش",
-   "source": "@newscenter",
-   "t": "2026-11-15T13:56:16+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -625,6 +618,13 @@
    "snippet": "🇺🇦 زلنسکی: پیشنهاد ما کاملاً عملی است. اوکراین به موشک‌های رهگیر پاتریوت و اس‌اِی‌اِم‌پی/تی از ذخایر",
    "source": "@Politicalnewschannell",
    "t": "2026-11-17T19:02:23+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "👏یک بار شارژ کن ، دوبار شارژشو‌ این طرح اختصاصی ریتزوبت برای کاربرای فارسی زبان خودش رو از دست نده 🔵",
+   "source": "@newscenter",
+   "t": "2026-11-17T19:57:13+00:00"
   }
  ],
  "version": 1
