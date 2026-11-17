@@ -414,9 +414,11 @@
   "2026-11-18": {
    "duplicates": 0,
    "failed": 0,
-   "published": 20,
-   "reasons": {},
-   "rejected": 0,
+   "published": 21,
+   "reasons": {
+    "تبلیغات عمومی": 1
+   },
+   "rejected": 1,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -439,23 +441,16 @@
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 3,
-     "rejected": 0
+     "published": 4,
+     "rejected": 1
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-17T21:07:18+00:00",
- "last_run": "2026-11-17T21:07:18+00:00",
+ "last_publish": "2026-11-17T21:12:18+00:00",
+ "last_run": "2026-11-17T21:12:18+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "تخفیف ویژه خریداری کنید✅✅",
-   "source": "@Politicalnewschannell",
-   "t": "2026-11-15T14:44:56+00:00"
-  },
   {
    "detail": "",
    "reason": "قمار و شرط‌بندی",
@@ -658,6 +653,13 @@
    "snippet": "👏یک بار شارژ کن ، دوبار شارژشو‌ این طرح اختصاصی ریتزوبت برای کاربرای فارسی زبان خودش رو از دست نده 🔵",
    "source": "@newscenter",
    "t": "2026-11-17T19:57:13+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "👑واقعا چرا ریتزوبت انقدر در بین ایرانی ها محبوب شد ⁉️ ➕ریتزوبت اولین سایت پیش‌بینی فوتبال ، که تمام ",
+   "source": "@newscenter",
+   "t": "2026-11-17T21:12:18+00:00"
   }
  ],
  "version": 1
