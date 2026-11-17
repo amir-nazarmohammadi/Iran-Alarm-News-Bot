@@ -414,11 +414,11 @@
   "2026-11-18": {
    "duplicates": 0,
    "failed": 0,
-   "published": 61,
+   "published": 66,
    "reasons": {
-    "تبلیغات عمومی": 1
+    "تبلیغات عمومی": 2
    },
-   "rejected": 1,
+   "rejected": 2,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -429,13 +429,13 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 22,
-     "rejected": 0
+     "published": 25,
+     "rejected": 1
     },
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 24,
+     "published": 26,
      "rejected": 0
     },
     "@newscenter": {
@@ -448,16 +448,9 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-17T22:17:21+00:00",
- "last_run": "2026-11-17T22:17:21+00:00",
+ "last_publish": "2026-11-17T22:23:15+00:00",
+ "last_run": "2026-11-17T22:23:15+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "قمار و شرط‌بندی",
-   "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️فینالی که در نیویورک منتظرش",
-   "source": "@newscenter",
-   "t": "2026-11-15T16:04:52+00:00"
-  },
   {
    "detail": "",
    "reason": "لینک دعوت",
@@ -660,6 +653,13 @@
    "snippet": "👑واقعا چرا ریتزوبت انقدر در بین ایرانی ها محبوب شد ⁉️ ➕ریتزوبت اولین سایت پیش‌بینی فوتبال ، که تمام ",
    "source": "@newscenter",
    "t": "2026-11-17T21:12:18+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "🇮🇱نتانیاهو: تهدیدهای امروز کمتر از تهدیدهای پیش از جنگ شش‌روزه ۱۹۶۷ نیستند بنیامین نتانیاهو، نخست‌وز",
+   "source": "@Politicalnewschannell",
+   "t": "2026-11-17T22:22:23+00:00"
   }
  ],
  "version": 1
