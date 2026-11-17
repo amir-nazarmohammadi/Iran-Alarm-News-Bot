@@ -378,11 +378,11 @@
   "2026-11-17": {
    "duplicates": 2,
    "failed": 0,
-   "published": 109,
+   "published": 112,
    "reasons": {
-    "تبلیغات عمومی": 4
+    "تبلیغات عمومی": 5
    },
-   "rejected": 4,
+   "rejected": 5,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -393,14 +393,14 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 34,
+     "published": 35,
      "rejected": 0
     },
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 45,
-     "rejected": 2
+     "published": 47,
+     "rejected": 3
     },
     "@newscenter": {
      "duplicates": 1,
@@ -412,16 +412,9 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-17T09:44:17+00:00",
- "last_run": "2026-11-17T09:44:17+00:00",
+ "last_publish": "2026-11-17T09:54:01+00:00",
+ "last_run": "2026-11-17T09:54:01+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "قمار و شرط‌بندی",
-   "snippet": "⚡️ هیجان فوتبال رو با پیش‌بینی در یک پلتفرم حرفه ای جهانی چند برابر کن ☑️چرا این دیدار حساس را در ری",
-   "source": "@newscenter",
-   "t": "2026-11-14T20:00:39+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -624,6 +617,13 @@
    "snippet": "🔺 روزگاری با ۳ هزار و ۵۰۰ تومان می‌شد یک لیست کامل از مایحتاج خانه را خرید؛ امروز اما برای خرید همان",
    "source": "@km_ap",
    "t": "2026-11-17T09:11:38+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "⭕️⭕️نون دو نرخی شد! توی خیلی از استان‌های نون دو نرخی شده، هر نفر ماهانه ۷ کیلو سهمیه آرد داره، یعنی",
+   "source": "@km_ap",
+   "t": "2026-11-17T09:54:01+00:00"
   }
  ],
  "version": 1
