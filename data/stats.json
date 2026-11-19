@@ -450,7 +450,7 @@
   "2026-11-19": {
    "duplicates": 1,
    "failed": 0,
-   "published": 315,
+   "published": 316,
    "reasons": {
     "تبلیغات VPN و پروکسی": 2,
     "تبلیغات عمومی": 3
@@ -478,15 +478,15 @@
     "@newscenter": {
      "duplicates": 1,
      "failed": 0,
-     "published": 52,
+     "published": 53,
      "rejected": 4
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-19T19:40:34+00:00",
- "last_run": "2026-11-19T19:40:34+00:00",
+ "last_publish": "2026-11-19T19:45:13+00:00",
+ "last_run": "2026-11-19T19:45:13+00:00",
  "recent_rejected": [
   {
    "detail": "",
