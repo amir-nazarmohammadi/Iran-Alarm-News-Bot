@@ -486,11 +486,11 @@
   "2026-11-20": {
    "duplicates": 0,
    "failed": 0,
-   "published": 37,
+   "published": 40,
    "reasons": {
-    "تبلیغات عمومی": 1
+    "تبلیغات عمومی": 2
    },
-   "rejected": 1,
+   "rejected": 2,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -513,23 +513,16 @@
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 9,
-     "rejected": 1
+     "published": 12,
+     "rejected": 2
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-19T22:45:18+00:00",
- "last_run": "2026-11-19T22:45:18+00:00",
+ "last_publish": "2026-11-19T23:47:31+00:00",
+ "last_run": "2026-11-19T23:47:31+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "لینک دعوت",
-   "snippet": "لیست کامل استان های تعطیل شده مشخص شد👇 https://t.me/+-Kbotw20Q78yMDBk",
-   "source": "@newscenter",
-   "t": "2026-11-16T17:50:41+00:00"
-  },
   {
    "detail": "",
    "reason": "لینک دعوت",
@@ -732,6 +725,13 @@
    "snippet": "👏یک بار شارژ کن ، دوبار شارژشو‌ این طرح اختصاصی ریتزوبت برای کاربرای فارسی زبان خودش رو از دست نده 🔵",
    "source": "@newscenter",
    "t": "2026-11-19T21:25:17+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "تبلیغات عمومی",
+   "snippet": "👏یک بار شارژ کن ، دوبار شارژشو‌ این طرح اختصاصی ریتزوبت برای کاربرای فارسی زبان خودش رو از دست نده 🔵",
+   "source": "@newscenter",
+   "t": "2026-11-19T23:47:30+00:00"
   }
  ],
  "version": 1
