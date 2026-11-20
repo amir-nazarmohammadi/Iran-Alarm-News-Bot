@@ -486,7 +486,7 @@
   "2026-11-21": {
    "duplicates": 1,
    "failed": 0,
-   "published": 52,
+   "published": 54,
    "reasons": {
     "لینک دعوت": 2
    },
@@ -501,7 +501,7 @@
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 17,
+     "published": 19,
      "rejected": 0
     },
     "@newscenter": {
@@ -514,8 +514,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-20T23:18:45+00:00",
- "last_run": "2026-11-20T23:18:45+00:00",
+ "last_publish": "2026-11-20T23:23:45+00:00",
+ "last_run": "2026-11-20T23:23:45+00:00",
  "recent_rejected": [
   {
    "detail": "",
