@@ -486,7 +486,7 @@
   "2026-11-20": {
    "duplicates": 2,
    "failed": 0,
-   "published": 234,
+   "published": 239,
    "reasons": {
     "تبلیغات عمومی": 2,
     "دعوت تبلیغاتی": 1,
@@ -497,19 +497,19 @@
     "@IranianMinds": {
      "duplicates": 0,
      "failed": 0,
-     "published": 34,
+     "published": 36,
      "rejected": 0
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 83,
+     "published": 85,
      "rejected": 0
     },
     "@km_ap": {
      "duplicates": 2,
      "failed": 0,
-     "published": 70,
+     "published": 71,
      "rejected": 0
     },
     "@newscenter": {
@@ -522,8 +522,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-20T17:55:12+00:00",
- "last_run": "2026-11-20T17:55:12+00:00",
+ "last_publish": "2026-11-20T18:00:25+00:00",
+ "last_run": "2026-11-20T18:00:25+00:00",
  "recent_rejected": [
   {
    "detail": "",
