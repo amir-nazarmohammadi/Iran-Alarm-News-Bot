@@ -486,12 +486,13 @@
   "2026-11-20": {
    "duplicates": 2,
    "failed": 0,
-   "published": 208,
+   "published": 210,
    "reasons": {
     "تبلیغات عمومی": 2,
+    "دعوت تبلیغاتی": 1,
     "قمار و شرط‌بندی": 2
    },
-   "rejected": 4,
+   "rejected": 5,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -502,7 +503,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 71,
+     "published": 72,
      "rejected": 0
     },
     "@km_ap": {
@@ -514,23 +515,16 @@
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 43,
-     "rejected": 4
+     "published": 44,
+     "rejected": 5
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-20T16:55:35+00:00",
- "last_run": "2026-11-20T16:55:35+00:00",
+ "last_publish": "2026-11-20T17:00:00+00:00",
+ "last_run": "2026-11-20T17:00:00+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "لینک دعوت",
-   "snippet": "لیست کامل استان های تعطیل شده مشخص شد👇 https://t.me/+-Kbotw20Q78yMDBk",
-   "source": "@newscenter",
-   "t": "2026-11-16T18:15:40+00:00"
-  },
   {
    "detail": "",
    "reason": "دعوت تبلیغاتی",
@@ -733,6 +727,13 @@
    "snippet": "بونوس ویژه ۵۵۰٪ خوش آمدگویی ورزشی و کازینو برای کاربرانی که در بتگو ثبت نام میکنند🤩🙄🤗 🔝🎉بتگو با بیش ",
    "source": "@newscenter",
    "t": "2026-11-20T16:04:54+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "دعوت تبلیغاتی",
+   "snippet": "ایرنا: شرکت توزیع نیروی برق تهران بزرگ با ارسال پیامک به مشترکان از آغاز مدیریت انرژی از ۳۰ آبان خبر",
+   "source": "@newscenter",
+   "t": "2026-11-20T16:59:57+00:00"
   }
  ],
  "version": 1
