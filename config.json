@@ -4,12 +4,14 @@
   "sources": [
     "@Politicalnewschannell",
     "@km_ap",
-    "@IranianMinds"
+    "@IranianMinds",
+    "@newscenter2020"
   ],
   "enabled_sources": [
     "@Politicalnewschannell",
     "@km_ap",
-    "@IranianMinds"
+    "@IranianMinds",
+    "@newscenter2020"
   ],
   "admins": [],
   "block_words": [],
@@ -18,6 +20,6 @@
     "gambling": true,
     "vpn_promotions": true
   },
-  "updated_at": "2026-11-21T22:25:32.208748+00:00",
+  "updated_at": "2026-11-21T22:25:46.178353+00:00",
   "updated_by": 96635648
 }
