@@ -486,7 +486,7 @@
   "2026-11-21": {
    "duplicates": 1,
    "failed": 0,
-   "published": 91,
+   "published": 92,
    "reasons": {
     "قمار و شرط‌بندی": 1,
     "لینک دعوت": 2
@@ -508,7 +508,7 @@
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 29,
+     "published": 30,
      "rejected": 0
     },
     "@newscenter": {
@@ -521,8 +521,8 @@
   }
  },
  "errors": [],
- "last_publish": "2026-11-21T06:14:03+00:00",
- "last_run": "2026-11-21T06:14:03+00:00",
+ "last_publish": "2026-11-21T06:19:03+00:00",
+ "last_run": "2026-11-21T06:19:03+00:00",
  "recent_rejected": [
   {
    "detail": "",
