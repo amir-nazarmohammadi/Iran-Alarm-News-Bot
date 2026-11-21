@@ -486,11 +486,12 @@
   "2026-11-21": {
    "duplicates": 1,
    "failed": 0,
-   "published": 81,
+   "published": 85,
    "reasons": {
+    "قمار و شرط‌بندی": 1,
     "لینک دعوت": 2
    },
-   "rejected": 2,
+   "rejected": 3,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -507,29 +508,22 @@
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 21,
+     "published": 24,
      "rejected": 0
     },
     "@newscenter": {
      "duplicates": 0,
      "failed": 0,
-     "published": 15,
-     "rejected": 2
+     "published": 16,
+     "rejected": 3
     }
    }
   }
  },
  "errors": [],
- "last_publish": "2026-11-21T05:54:07+00:00",
- "last_run": "2026-11-21T05:54:07+00:00",
+ "last_publish": "2026-11-21T06:00:06+00:00",
+ "last_run": "2026-11-21T06:00:06+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "آقایان مسئول! سخنان امام جمعه کرمانشاه درباره رسانه‌ها را فراموش کرده‌اید؟ امروز شاهد وضعیتی هستیم ک",
-   "source": "@km_ap",
-   "t": "2026-11-16T21:00:49+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -732,6 +726,13 @@
    "snippet": ". 🔞رک بگم، بیشترتون اصلاً شرط‌بندی بلد نیستید!😐 📊 آنالیزهای سیاوش رو ببین، بعد متوجه میشی داستان چیه",
    "source": "@newscenter",
    "t": "2026-11-20T22:53:42+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "قمار و شرط‌بندی",
+   "snippet": "تا سقف ۸ میلیارد ریال جایزه در سیستم وفاداری بتگو🤩🙄🤗 🔝🎉 بتگو با بیش از ۷ سال سابقه کار در بازار ایرا",
+   "source": "@newscenter",
+   "t": "2026-11-21T05:59:01+00:00"
   }
  ],
  "version": 1
