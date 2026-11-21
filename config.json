@@ -2,23 +2,22 @@
   "destination": "@Iran_Alarm_News",
   "paused": false,
   "sources": [
-    "@newscenter",
     "@Politicalnewschannell",
     "@km_ap",
     "@IranianMinds"
   ],
   "enabled_sources": [
-    "@newscenter",
     "@Politicalnewschannell",
     "@km_ap",
     "@IranianMinds"
   ],
   "admins": [],
+  "block_words": [],
   "filters": {
     "ads": true,
     "gambling": true,
     "vpn_promotions": true
   },
-  "updated_at": "2026-11-03T00:53:41.393682+00:00",
+  "updated_at": "2026-11-21T22:25:32.208748+00:00",
   "updated_by": 96635648
 }
