@@ -483,31 +483,31 @@
   "2026-11-22": {
    "duplicates": 4,
    "failed": 0,
-   "published": 221,
+   "published": 235,
    "reasons": {
     "تبلیغات VPN و پروکسی": 2,
     "تبلیغات عمومی": 2,
-    "قمار و شرط‌بندی": 1,
+    "قمار و شرط‌بندی": 2,
     "لینک دعوت": 2
    },
-   "rejected": 7,
+   "rejected": 8,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
-     "published": 12,
+     "published": 15,
      "rejected": 0
     },
     "@Politicalnewschannell": {
      "duplicates": 1,
      "failed": 0,
-     "published": 93,
+     "published": 94,
      "rejected": 2
     },
     "@km_ap": {
      "duplicates": 1,
      "failed": 0,
-     "published": 79,
+     "published": 80,
      "rejected": 2
     },
     "@newscenter": {
@@ -519,8 +519,8 @@
     "@newscenter2020": {
      "duplicates": 0,
      "failed": 0,
-     "published": 20,
-     "rejected": 2
+     "published": 29,
+     "rejected": 3
     }
    }
   }
@@ -532,16 +532,9 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-22T14:57:13+00:00",
- "last_run": "2026-11-22T14:57:13+00:00",
+ "last_publish": "2026-11-22T14:58:21+00:00",
+ "last_run": "2026-11-22T14:58:21+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "👑واقعا چرا ریتزوبت انقدر در بین ایرانی ها محبوب شد ⁉️ ➕ریتزوبت اولین سایت پیش‌بینی فوتبال ، که تمام ",
-   "source": "@newscenter",
-   "t": "2026-11-17T22:47:23+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -744,6 +737,13 @@
    "snippet": "المانیتور: نتانیاهو در حال فشار آوردن برای انجام حمله‌ای فوری، کوتاه‌مدت و سنگین علیه ایران است 🔴جدی",
    "source": "@km_ap",
    "t": "2026-11-22T14:56:15+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "قمار و شرط‌بندی",
+   "snippet": "تا ۱۰۰٪ بیمه فرم پیشبینی در بتگو🤩🙄🤗 🔝🎉 بتگو با بیش از ۷ سال سابقه کار در بازار ایران🤑 ✔️-تا ۵۵۰٪ بون",
+   "source": "@newscenter2020",
+   "t": "2026-11-22T14:58:20+00:00"
   }
  ],
  "version": 1

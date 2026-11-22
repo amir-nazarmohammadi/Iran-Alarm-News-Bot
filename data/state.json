@@ -1,9 +1,9 @@
 {
   "last_ids": {
-    "@politicalnewschannell": 45915,
-    "@km_ap": 237619,
-    "@iranianminds": 32830,
-    "@newscenter2020": 77707
+    "@politicalnewschannell": 45916,
+    "@km_ap": 237620,
+    "@iranianminds": 32833,
+    "@newscenter2020": 77717
   },
   "fingerprints": [
     "916380b5838adf6c974a48f6d4377cb8d1537f074301f92dcafb1cf73d3c015c",
@@ -8824,7 +8824,21 @@
     "f8053ac7d7fff65e06ec5e359987c092cc9f5e1e35c8a1304693c694cc09439c",
     "afd3f0185d769e280ae664e348fa3a1aff37f9797039f4a69a005d219806a9b9",
     "fc5f1bb1a4a16be667204a645f8904908d58417d67b220d2edcb8b6838abdf0d",
-    "193e2eeb02f5d742fbd16293bfeb1ed900fd68b7cff4e0ede42a5b7bea1cb975"
+    "193e2eeb02f5d742fbd16293bfeb1ed900fd68b7cff4e0ede42a5b7bea1cb975",
+    "a8e9f623e092628b41a60a20515509fdbb06a23c0cc64d00bb2d23cfb282482a",
+    "07f4a5a27c8f95221406cb2b483c9f72780abec3b170b6d1c1bface6995c70f6",
+    "f96f7c7c5b05e9f473bc8ae62565ef55fe052894e7d76eebdf539beb9bf41cb5",
+    "c3daa8dd282f50b95ab2f2d9487f3ce34cac1efc6090968b9b6e26cd7083e353",
+    "9020ff49df9d4240f6109f6e91121ac509d448c7f8db86701fa8058aee0240ad",
+    "7217739f9dd57a8cf835817f91211465c641eb649cc53273048af5478b6fb8d0",
+    "37fa5a9bc143748e46910c89ef9ee34c470ea0e124fbf6fe33e907d5fcc56f5a",
+    "acbffae69e1f77f541778ef4d978c076a5ecfa2aec0167ed3e30cbd2a1baeec4",
+    "8f4b617283144a1f61f80d3960cca5d0d01c41593712231d3982847237908bd2",
+    "9d942d7e8caf8678ebecbbc444a06f70a8ca66034eacbdee1e9a75a9ae6d0f5d",
+    "29b6f046022fa19ae6c626616a7c42b85b9fcff651f759f91980b527e8d162f3",
+    "6e87922d0e246ed426c8249c0cd6e4e641f637ad583a57276fab965fd2e0471f",
+    "9b3facd4defaca5a2fdd3cc94550f8167181bdad8ec687115c38fe4286ec5044",
+    "4a1e6de988462efec28761292f8420d3d6258a43e557f75d29d526ea233c1b80"
   ],
   "entities": {
     "@politicalnewschannell": {
@@ -8844,9 +8858,7 @@
       "hash": 7735363438333318869
     }
   },
-  "attempts": {
-    "@iranianminds:32831": 1
-  },
+  "attempts": {},
   "alerts": {
     "source:@newscenter": "2026-11-21T22:08:13+00:00"
   },
