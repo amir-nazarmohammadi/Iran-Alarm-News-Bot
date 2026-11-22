@@ -483,7 +483,7 @@
   "2026-11-22": {
    "duplicates": 4,
    "failed": 0,
-   "published": 269,
+   "published": 273,
    "reasons": {
     "تبلیغات VPN و پروکسی": 2,
     "تبلیغات عمومی": 3,
@@ -495,13 +495,13 @@
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
-     "published": 20,
+     "published": 21,
      "rejected": 1
     },
     "@Politicalnewschannell": {
      "duplicates": 1,
      "failed": 0,
-     "published": 108,
+     "published": 110,
      "rejected": 2
     },
     "@km_ap": {
@@ -519,7 +519,7 @@
     "@newscenter2020": {
      "duplicates": 0,
      "failed": 0,
-     "published": 38,
+     "published": 39,
      "rejected": 4
     }
    }
@@ -532,8 +532,8 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-22T16:48:29+00:00",
- "last_run": "2026-11-22T16:48:29+00:00",
+ "last_publish": "2026-11-22T16:53:48+00:00",
+ "last_run": "2026-11-22T16:53:48+00:00",
  "recent_rejected": [
   {
    "detail": "",
