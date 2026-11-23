@@ -490,7 +490,7 @@
    }
   },
   "2026-11-23": {
-   "duplicates": 0,
+   "duplicates": 1,
    "failed": 0,
    "published": 51,
    "reasons": {
@@ -511,7 +511,7 @@
      "rejected": 0
     },
     "@km_ap": {
-     "duplicates": 0,
+     "duplicates": 1,
      "failed": 0,
      "published": 18,
      "rejected": 0
@@ -533,7 +533,7 @@
   }
  ],
  "last_publish": "2026-11-23T05:37:14+00:00",
- "last_run": "2026-11-23T05:37:14+00:00",
+ "last_run": "2026-11-23T05:42:06+00:00",
  "recent_rejected": [
   {
    "detail": "",
