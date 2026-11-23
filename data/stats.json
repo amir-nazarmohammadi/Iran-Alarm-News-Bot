@@ -490,16 +490,16 @@
    }
   },
   "2026-11-23": {
-   "duplicates": 2,
+   "duplicates": 3,
    "failed": 0,
-   "published": 195,
+   "published": 199,
    "reasons": {
     "تبلیغات VPN و پروکسی": 1,
     "تبلیغات عمومی": 2,
-    "قمار و شرط‌بندی": 1,
+    "قمار و شرط‌بندی": 2,
     "لینک دعوت": 1
    },
-   "rejected": 5,
+   "rejected": 6,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
@@ -510,7 +510,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 81,
+     "published": 83,
      "rejected": 2
     },
     "@km_ap": {
@@ -520,10 +520,10 @@
      "rejected": 0
     },
     "@newscenter2020": {
-     "duplicates": 0,
+     "duplicates": 1,
      "failed": 0,
-     "published": 36,
-     "rejected": 2
+     "published": 38,
+     "rejected": 3
     }
    }
   }
@@ -535,16 +535,9 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-23T13:29:40+00:00",
- "last_run": "2026-11-23T13:29:40+00:00",
+ "last_publish": "2026-11-23T13:34:51+00:00",
+ "last_run": "2026-11-23T13:34:51+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "قمار و شرط‌بندی",
-   "snippet": "تا سقف ۸ میلیارد ریال جایزه در سیستم وفاداری بتگو🤩🙄🤗 🔝🎉 بتگو با بیش از ۷ سال سابقه کار در بازار ایرا",
-   "source": "@newscenter",
-   "t": "2026-11-21T13:54:49+00:00"
-  },
   {
    "detail": "",
    "reason": "لینک دعوت",
@@ -747,6 +740,13 @@
    "snippet": "🏳کانفیگ رایگان وی‌تو‌ری، همش وصله @Politicalnewschannell",
    "source": "@Politicalnewschannell",
    "t": "2026-11-23T12:14:54+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "قمار و شرط‌بندی",
+   "snippet": "۳۰٪ بونوس ورزشی در بتگو 🤩🙄🤗 🔝🎉 بتگو با بیش از ۷ سال سابقه کار در بازار ایران🤑 ✔️-تا ۵۵۰٪ بونوس خوش آ",
+   "source": "@newscenter2020",
+   "t": "2026-11-23T13:34:51+00:00"
   }
  ],
  "version": 1
