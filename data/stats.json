@@ -1,43 +1,5 @@
 {
  "days": {
-  "2026-11-10": {
-   "duplicates": 2,
-   "failed": 0,
-   "published": 376,
-   "reasons": {
-    "تبلیغات VPN و پروکسی": 1,
-    "تبلیغات عمومی": 6,
-    "دعوت تبلیغاتی": 1,
-    "قمار و شرط‌بندی": 4
-   },
-   "rejected": 12,
-   "sources": {
-    "@IranianMinds": {
-     "duplicates": 1,
-     "failed": 0,
-     "published": 44,
-     "rejected": 1
-    },
-    "@Politicalnewschannell": {
-     "duplicates": 0,
-     "failed": 0,
-     "published": 146,
-     "rejected": 4
-    },
-    "@km_ap": {
-     "duplicates": 0,
-     "failed": 0,
-     "published": 122,
-     "rejected": 2
-    },
-    "@newscenter": {
-     "duplicates": 1,
-     "failed": 0,
-     "published": 64,
-     "rejected": 5
-    }
-   }
-  },
   "2026-11-11": {
    "duplicates": 4,
    "failed": 0,
@@ -526,6 +488,41 @@
      "rejected": 3
     }
    }
+  },
+  "2026-11-24": {
+   "duplicates": 0,
+   "failed": 0,
+   "published": 39,
+   "reasons": {
+    "لینک دعوت": 1
+   },
+   "rejected": 1,
+   "sources": {
+    "@IranianMinds": {
+     "duplicates": 0,
+     "failed": 0,
+     "published": 10,
+     "rejected": 0
+    },
+    "@Politicalnewschannell": {
+     "duplicates": 0,
+     "failed": 0,
+     "published": 10,
+     "rejected": 0
+    },
+    "@km_ap": {
+     "duplicates": 0,
+     "failed": 0,
+     "published": 10,
+     "rejected": 0
+    },
+    "@newscenter2020": {
+     "duplicates": 0,
+     "failed": 0,
+     "published": 9,
+     "rejected": 1
+    }
+   }
   }
  },
  "errors": [
@@ -535,16 +532,9 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-23T15:20:00+00:00",
- "last_run": "2026-11-23T15:20:00+00:00",
+ "last_publish": "2026-11-23T22:03:25+00:00",
+ "last_run": "2026-11-23T22:03:25+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "لینک دعوت",
-   "snippet": "تبانی لو رفته از لیگ برتر ایران🇮🇷 🚀نتیجه دقیق صد درصدی از منبع معتبر که لیمیت داشت 5.7 دلار خودم 10 ",
-   "source": "@newscenter",
-   "t": "2026-11-21T15:39:54+00:00"
-  },
   {
    "detail": "",
    "reason": "لینک دعوت",
@@ -747,6 +737,13 @@
    "snippet": "۳۰٪ بونوس ورزشی در بتگو 🤩🙄🤗 🔝🎉 بتگو با بیش از ۷ سال سابقه کار در بازار ایران🤑 ✔️-تا ۵۵۰٪ بونوس خوش آ",
    "source": "@newscenter2020",
    "t": "2026-11-23T13:34:51+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "لینک دعوت",
+   "snippet": ". 🔞رک بگم، بیشترتون اصلاً شرط‌بندی بلد نیستید!😐 📊 آنالیزهای سیاوش رو ببین، بعد متوجه میشی داستان چیه",
+   "source": "@newscenter2020",
+   "t": "2026-11-23T22:03:19+00:00"
   }
  ],
  "version": 1
