@@ -492,22 +492,22 @@
   "2026-11-24": {
    "duplicates": 4,
    "failed": 0,
-   "published": 217,
+   "published": 220,
    "reasons": {
-    "لینک دعوت": 2
+    "لینک دعوت": 3
    },
-   "rejected": 2,
+   "rejected": 3,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
      "published": 32,
-     "rejected": 0
+     "rejected": 1
     },
     "@Politicalnewschannell": {
      "duplicates": 1,
      "failed": 0,
-     "published": 89,
+     "published": 91,
      "rejected": 0
     },
     "@km_ap": {
@@ -519,7 +519,7 @@
     "@newscenter2020": {
      "duplicates": 2,
      "failed": 0,
-     "published": 39,
+     "published": 40,
      "rejected": 2
     }
    }
@@ -532,16 +532,9 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-24T17:54:25+00:00",
- "last_run": "2026-11-24T17:54:25+00:00",
+ "last_publish": "2026-11-24T17:59:36+00:00",
+ "last_run": "2026-11-24T17:59:36+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "لینک دعوت",
-   "snippet": ". 🔞رک بگم، بیشترتون اصلاً شرط‌بندی بلد نیستید!😐 📊 آنالیزهای سیاوش رو ببین، بعد متوجه میشی داستان چیه",
-   "source": "@newscenter",
-   "t": "2026-11-21T20:38:08+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات VPN و پروکسی",
@@ -744,6 +737,13 @@
    "snippet": ". 🔞رک بگم، بیشترتون اصلاً شرط‌بندی بلد نیستید!😐 📊 آنالیزهای سیاوش رو ببین، بعد متوجه میشی داستان چیه",
    "source": "@newscenter2020",
    "t": "2026-11-23T22:05:46+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "لینک دعوت",
+   "snippet": "#تبلیغ بیاین چت👇 https://t.me/+bq-8DZhLxGozZGQ0",
+   "source": "@IranianMinds",
+   "t": "2026-11-24T17:59:25+00:00"
   }
  ],
  "version": 1
