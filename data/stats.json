@@ -492,7 +492,7 @@
   "2026-11-24": {
    "duplicates": 4,
    "failed": 0,
-   "published": 246,
+   "published": 248,
    "reasons": {
     "لینک دعوت": 3
    },
@@ -507,7 +507,7 @@
     "@Politicalnewschannell": {
      "duplicates": 1,
      "failed": 0,
-     "published": 106,
+     "published": 107,
      "rejected": 0
     },
     "@km_ap": {
@@ -519,7 +519,7 @@
     "@newscenter2020": {
      "duplicates": 2,
      "failed": 0,
-     "published": 42,
+     "published": 43,
      "rejected": 2
     }
    }
@@ -532,8 +532,8 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-24T19:04:38+00:00",
- "last_run": "2026-11-24T19:04:38+00:00",
+ "last_publish": "2026-11-24T19:09:31+00:00",
+ "last_run": "2026-11-24T19:09:31+00:00",
  "recent_rejected": [
   {
    "detail": "",
