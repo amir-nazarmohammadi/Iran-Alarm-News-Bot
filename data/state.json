@@ -1,9 +1,9 @@
 {
   "last_ids": {
-    "@politicalnewschannell": 46321,
+    "@politicalnewschannell": 46322,
     "@km_ap": 237836,
-    "@iranianminds": 32920,
-    "@newscenter2020": 77910
+    "@iranianminds": 32926,
+    "@newscenter2020": 77939
   },
   "fingerprints": [
     "916380b5838adf6c974a48f6d4377cb8d1537f074301f92dcafb1cf73d3c015c",
@@ -9474,7 +9474,23 @@
     "85df9298ea1e1f9274e25d3f4e6e3d314dd6d2415f2e40324b4708581a367de7",
     "0c0acabf43abf2691db84f1fb2dfe00378a2feffda1aed4d8e0d19845fb96854",
     "700d610d45a89573aad7379e667e73bac65d8ca42a43d548da1c9ba239f7c0e5",
-    "22e3295d3a30b52d0d1fd6a5f654f009e97597fc911ea9682d1ad630a92ac173"
+    "22e3295d3a30b52d0d1fd6a5f654f009e97597fc911ea9682d1ad630a92ac173",
+    "f1b2c62121d6e4260bf061820ab7652a346410abaae0f09b6a1e22e09d28ec62",
+    "2db01351df9f6d855575a3bde4d4d765498412311db2d86d279b8f14d00e139e",
+    "e4f01436b51ea868b8bfd0fe3e3763370f33bf74a8b5e99149d83ab7f7bb0390",
+    "af311415eae6f730bfbb45374bdb87eb846a85c72e3820f45a3fe92000c90e8b",
+    "b04a502896252e82bae0869fdfac907875ff7a46fd7aaee629e8f719c1e7290e",
+    "bb2015420a96abde896c5121ab6b14d044adb5f88c59694afaa1a3d37c7d42bd",
+    "1b050cdaf28e109b4ede13e6d772003b24c7bf10828eac7578c769e2e0aa77c8",
+    "32e4622ff61b2a4c7c59a3633cb522ee46331c83d75a02243d5c1e8c6fde4cd4",
+    "af38fe9e8f500909ed73cc63b9da2c44b4bc6ec86ddba2b1669bd37d86535e19",
+    "83c47e5aa856cd74100798396f5828c105a06ed6c5dada30af89d9c22146d9bf",
+    "ecef2b2dbd03847a571a4f760d7a9f9518daf346f05cc645c481cedf7aeab831",
+    "0dc2275e157cc2826d572a99808c2a735b60c86f6f2f684a375bd7e4e9eb078e",
+    "b1a8205f37f10f2d9bb8896b1c4b03e73ab088e827a200a553ef3eae6a13ce5b",
+    "1e23aba6d785e5446f6ec14d74fb577b9c848f45004c7ef78e14684849e82da6",
+    "418eb75d228805cdd15d8ca9d3266f675239fe9823e6c68e803dae250c9abfff",
+    "b24f81fbcac9fd83369f647fdc110e0eea67a41e187da8195dd02c7de67046f3"
   ],
   "entities": {
     "@politicalnewschannell": {
@@ -9494,9 +9510,7 @@
       "hash": 7735363438333318869
     }
   },
-  "attempts": {
-    "@iranianminds:32921": 1
-  },
+  "attempts": {},
   "alerts": {
     "source:@newscenter": "2026-11-21T22:08:13+00:00"
   },
