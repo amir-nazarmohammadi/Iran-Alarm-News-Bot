@@ -491,40 +491,40 @@
    }
   },
   "2026-11-25": {
-   "duplicates": 1,
+   "duplicates": 2,
    "failed": 0,
-   "published": 233,
+   "published": 269,
    "reasons": {
     "تبلیغات VPN و پروکسی": 1,
     "دعوت تبلیغاتی": 1,
     "قمار و شرط‌بندی": 2,
-    "لینک دعوت": 2
+    "لینک دعوت": 3
    },
-   "rejected": 6,
+   "rejected": 7,
    "sources": {
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
-     "published": 18,
+     "published": 27,
      "rejected": 0
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 112,
+     "published": 122,
      "rejected": 2
     },
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 61,
+     "published": 70,
      "rejected": 0
     },
     "@newscenter2020": {
-     "duplicates": 0,
+     "duplicates": 1,
      "failed": 0,
-     "published": 42,
-     "rejected": 4
+     "published": 50,
+     "rejected": 5
     }
    }
   }
@@ -536,16 +536,9 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-25T16:03:01+00:00",
- "last_run": "2026-11-25T16:03:01+00:00",
+ "last_publish": "2026-11-25T20:11:52+00:00",
+ "last_run": "2026-11-25T20:11:52+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "تبلیغات عمومی",
-   "snippet": "💥تا ۹۹٪ تخفیف واقعی + بُرد جایزه طلا 🔮توی بلک‌فرایدی جادویی تپسی‌شاپ، هرچی که فکرشو بکنی تا ۹۹٪ تخفی",
-   "source": "@km_ap",
-   "t": "2026-11-22T15:28:17+00:00"
-  },
   {
    "detail": "",
    "reason": "لینک دعوت",
@@ -748,6 +741,13 @@
    "snippet": "منتظر بلک فرایدی بتگو و سورپرایزهای ویژه بتگو باشید💸 🤩🙄🤗 🔝🎉 بتگو با بیش از ۷ سال سابقه کار در بازار ",
    "source": "@newscenter2020",
    "t": "2026-11-25T13:57:46+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "لینک دعوت",
+   "snippet": "تبانی لو رفته از لیگ برتر ایران🇮🇷 🚀نتیجه دقیق صد درصدی از منبع معتبر که لیمیت داشت 5.7 دلار خودم 10 ",
+   "source": "@newscenter2020",
+   "t": "2026-11-25T20:11:50+00:00"
   }
  ],
  "version": 1
