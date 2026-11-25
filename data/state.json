@@ -3,7 +3,7 @@
     "@politicalnewschannell": 46444,
     "@km_ap": 237910,
     "@iranianminds": 32944,
-    "@newscenter2020": 77975
+    "@newscenter2020": 77981
   },
   "fingerprints": [
     "916380b5838adf6c974a48f6d4377cb8d1537f074301f92dcafb1cf73d3c015c",
@@ -9688,7 +9688,13 @@
     "1db975387fd41e44ec0def51aae812a577778c9cab5d0c12db04e51044ae8539",
     "fa300674b208f6046d99ba76a2f0352bd84dc1db569e065838c41a3c84d769de",
     "f6a4bde9095b3ad9051ee81b2d912972371edccd6370f8ea5ccc0631831f8863",
-    "891036cc7ba945b94ac600ae57230bab12cb1d3f82ea0ea5cbf51183588a8b8e"
+    "891036cc7ba945b94ac600ae57230bab12cb1d3f82ea0ea5cbf51183588a8b8e",
+    "0432a6134cc6c40fc8e5b0feac9221c4ba779d7bc6a3385e82ec97a15391d549",
+    "a3f36e0833a5b76fe1a4c45af641c02d5fd41e24ce56e335f468fca5088739c1",
+    "bd61355c5c8c69e9c7c98bb81c39a769c5527510ca870c6a7c0903908bb949d0",
+    "eb81fa1171b340b86ad7b3deddb3743a8b7e6064f38f5205389bd63ed15ae643",
+    "ab57649615a57b77559f2dcba742fea8c49740a4eea463a395488c932bb0200e",
+    "cc52d85eebb9009b82532ef69a8d1a67f7d4bec88ec9158716d736af1fc4dcc4"
   ],
   "entities": {
     "@politicalnewschannell": {
@@ -9708,9 +9714,7 @@
       "hash": 7735363438333318869
     }
   },
-  "attempts": {
-    "@newscenter2020:77976": 1
-  },
+  "attempts": {},
   "alerts": {
     "source:@newscenter": "2026-11-21T22:08:13+00:00"
   },
