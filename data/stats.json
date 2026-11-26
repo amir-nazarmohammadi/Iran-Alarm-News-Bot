@@ -493,7 +493,7 @@
   "2026-11-26": {
    "duplicates": 1,
    "failed": 0,
-   "published": 32,
+   "published": 33,
    "reasons": {},
    "rejected": 0,
    "sources": {
@@ -512,7 +512,7 @@
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 6,
+     "published": 7,
      "rejected": 0
     },
     "@newscenter2020": {
@@ -531,8 +531,8 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-25T23:00:04+00:00",
- "last_run": "2026-11-26T02:50:38+00:00",
+ "last_publish": "2026-11-26T03:05:43+00:00",
+ "last_run": "2026-11-26T03:05:43+00:00",
  "recent_rejected": [
   {
    "detail": "",
