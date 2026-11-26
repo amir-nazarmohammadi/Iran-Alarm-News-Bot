@@ -493,9 +493,11 @@
   "2026-11-26": {
    "duplicates": 2,
    "failed": 0,
-   "published": 190,
-   "reasons": {},
-   "rejected": 0,
+   "published": 192,
+   "reasons": {
+    "لینک دعوت": 1
+   },
+   "rejected": 1,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
@@ -506,7 +508,7 @@
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 75,
+     "published": 76,
      "rejected": 0
     },
     "@km_ap": {
@@ -518,8 +520,8 @@
     "@newscenter2020": {
      "duplicates": 2,
      "failed": 0,
-     "published": 42,
-     "rejected": 0
+     "published": 43,
+     "rejected": 1
     }
    }
   }
@@ -531,16 +533,9 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-26T15:30:13+00:00",
- "last_run": "2026-11-26T15:30:13+00:00",
+ "last_publish": "2026-11-26T15:32:44+00:00",
+ "last_run": "2026-11-26T15:32:44+00:00",
  "recent_rejected": [
-  {
-   "detail": "",
-   "reason": "لینک دعوت",
-   "snippet": "💖سایت بین المللی ژتون بت💖 🎖️معتبرترین سایت روسی فعال در ایران🎖️ ⛔شارژ از طریق کارت بانکی،ارز،ووچر ⛔ت",
-   "source": "@newscenter2020",
-   "t": "2026-11-22T15:58:18+00:00"
-  },
   {
    "detail": "",
    "reason": "تبلیغات عمومی",
@@ -743,6 +738,13 @@
    "snippet": "تبانی لو رفته از لیگ برتر ایران🇮🇷 🚀نتیجه دقیق صد درصدی از منبع معتبر که لیمیت داشت 5.7 دلار خودم 10 ",
    "source": "@newscenter2020",
    "t": "2026-11-25T20:11:50+00:00"
+  },
+  {
+   "detail": "",
+   "reason": "لینک دعوت",
+   "snippet": "💎سایت بین المللی ژتون بت💎 🆗معتبرترین سایت روسی فعال در ایران🆗 ⭐️شارژ از طریق کارت بانکی،ارز،ووچر ⭐️ت",
+   "source": "@newscenter2020",
+   "t": "2026-11-26T15:32:43+00:00"
   }
  ],
  "version": 1
