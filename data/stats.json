@@ -1,44 +1,5 @@
 {
  "days": {
-  "2026-11-13": {
-   "duplicates": 15,
-   "failed": 0,
-   "published": 426,
-   "reasons": {
-    "تبلیغات VPN و پروکسی": 2,
-    "تبلیغات عمومی": 8,
-    "دعوت تبلیغاتی": 2,
-    "قمار و شرط‌بندی": 2,
-    "لینک دعوت": 3
-   },
-   "rejected": 17,
-   "sources": {
-    "@IranianMinds": {
-     "duplicates": 4,
-     "failed": 0,
-     "published": 54,
-     "rejected": 0
-    },
-    "@Politicalnewschannell": {
-     "duplicates": 0,
-     "failed": 0,
-     "published": 145,
-     "rejected": 3
-    },
-    "@km_ap": {
-     "duplicates": 4,
-     "failed": 0,
-     "published": 138,
-     "rejected": 2
-    },
-    "@newscenter": {
-     "duplicates": 7,
-     "failed": 0,
-     "published": 89,
-     "rejected": 12
-    }
-   }
-  },
   "2026-11-14": {
    "duplicates": 5,
    "failed": 0,
@@ -524,6 +485,39 @@
      "rejected": 1
     }
    }
+  },
+  "2026-11-27": {
+   "duplicates": 1,
+   "failed": 0,
+   "published": 29,
+   "reasons": {},
+   "rejected": 0,
+   "sources": {
+    "@IranianMinds": {
+     "duplicates": 1,
+     "failed": 0,
+     "published": 6,
+     "rejected": 0
+    },
+    "@Politicalnewschannell": {
+     "duplicates": 0,
+     "failed": 0,
+     "published": 10,
+     "rejected": 0
+    },
+    "@km_ap": {
+     "duplicates": 0,
+     "failed": 0,
+     "published": 10,
+     "rejected": 0
+    },
+    "@newscenter2020": {
+     "duplicates": 0,
+     "failed": 0,
+     "published": 3,
+     "rejected": 0
+    }
+   }
   }
  },
  "errors": [
@@ -533,8 +527,8 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-26T17:52:50+00:00",
- "last_run": "2026-11-26T17:52:50+00:00",
+ "last_publish": "2026-11-26T21:58:08+00:00",
+ "last_run": "2026-11-26T21:58:08+00:00",
  "recent_rejected": [
   {
    "detail": "",
