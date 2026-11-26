@@ -493,32 +493,32 @@
   "2026-11-26": {
    "duplicates": 2,
    "failed": 0,
-   "published": 171,
+   "published": 176,
    "reasons": {},
    "rejected": 0,
    "sources": {
     "@IranianMinds": {
      "duplicates": 0,
      "failed": 0,
-     "published": 26,
+     "published": 27,
      "rejected": 0
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 68,
+     "published": 69,
      "rejected": 0
     },
     "@km_ap": {
      "duplicates": 0,
      "failed": 0,
-     "published": 38,
+     "published": 40,
      "rejected": 0
     },
     "@newscenter2020": {
      "duplicates": 2,
      "failed": 0,
-     "published": 39,
+     "published": 40,
      "rejected": 0
     }
    }
@@ -531,8 +531,8 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-26T14:37:37+00:00",
- "last_run": "2026-11-26T14:37:37+00:00",
+ "last_publish": "2026-11-26T14:42:43+00:00",
+ "last_run": "2026-11-26T14:42:43+00:00",
  "recent_rejected": [
   {
    "detail": "",
