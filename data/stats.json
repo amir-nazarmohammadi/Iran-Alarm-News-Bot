@@ -489,7 +489,7 @@
   "2026-11-27": {
    "duplicates": 1,
    "failed": 0,
-   "published": 109,
+   "published": 112,
    "reasons": {
     "دعوت تبلیغاتی": 1
    },
@@ -498,13 +498,13 @@
     "@IranianMinds": {
      "duplicates": 1,
      "failed": 0,
-     "published": 13,
+     "published": 14,
      "rejected": 0
     },
     "@Politicalnewschannell": {
      "duplicates": 0,
      "failed": 0,
-     "published": 37,
+     "published": 38,
      "rejected": 0
     },
     "@km_ap": {
@@ -516,7 +516,7 @@
     "@newscenter2020": {
      "duplicates": 0,
      "failed": 0,
-     "published": 22,
+     "published": 23,
      "rejected": 0
     }
    }
@@ -529,8 +529,8 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-27T08:32:43+00:00",
- "last_run": "2026-11-27T08:32:43+00:00",
+ "last_publish": "2026-11-27T08:47:26+00:00",
+ "last_run": "2026-11-27T08:47:26+00:00",
  "recent_rejected": [
   {
    "detail": "",
