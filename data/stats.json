@@ -489,7 +489,7 @@
   "2026-11-28": {
    "duplicates": 1,
    "failed": 0,
-   "published": 40,
+   "published": 41,
    "reasons": {
     "تبلیغات VPN و پروکسی": 1,
     "لینک دعوت": 1
@@ -517,7 +517,7 @@
     "@newscenter2020": {
      "duplicates": 1,
      "failed": 0,
-     "published": 11,
+     "published": 12,
      "rejected": 1
     }
    }
@@ -530,8 +530,8 @@
    "t": "2026-11-21T22:08:13+00:00"
   }
  ],
- "last_publish": "2026-11-28T05:32:51+00:00",
- "last_run": "2026-11-28T05:32:51+00:00",
+ "last_publish": "2026-11-28T05:37:52+00:00",
+ "last_run": "2026-11-28T05:37:52+00:00",
  "recent_rejected": [
   {
    "detail": "",
