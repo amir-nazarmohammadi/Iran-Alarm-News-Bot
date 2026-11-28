@@ -1,9 +1,9 @@
 {
   "last_ids": {
-    "@politicalnewschannell": 46949,
+    "@politicalnewschannell": 46950,
     "@km_ap": 238266,
     "@iranianminds": 33121,
-    "@newscenter2020": 78205
+    "@newscenter2020": 78207
   },
   "fingerprints": [
     "916380b5838adf6c974a48f6d4377cb8d1537f074301f92dcafb1cf73d3c015c",
@@ -10663,7 +10663,10 @@
     "d626a856e8988de8711456ed32447b2f7730b24842b9bf3e0ba6a914ddfc40d5",
     "67c3d7118ea5330efb2332828f703925f98cfc9d93e47213039a97cf91adbaea",
     "951b56d2fa7f7b11cb6dc71407a5114801edbe7d9df3ace65132f2bf88f662b3",
-    "58fd8ed6c41636dc993ad67cef071d3701f3f7d32d24904e41a326e5ffd6ab6d"
+    "58fd8ed6c41636dc993ad67cef071d3701f3f7d32d24904e41a326e5ffd6ab6d",
+    "d1328327edaba6a23dbc900f9f2df70efc3a36d8e4d96a69cd6b8ba9b1d1321a",
+    "f8c7d42e5e93d2fc29c94dd02082046dfbd671501d8c82e1292e88c20e535c45",
+    "750dfd1cd09d680e77d215dcfe424a007002815ab29053a11ee1ed6c05aa6806"
   ],
   "entities": {
     "@politicalnewschannell": {
